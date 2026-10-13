@@ -19,6 +19,13 @@ function capture(g,name) {
 (async()=>{
   const menu=await core();steps(menu,600);press(menu,8,60);press(menu,8,60);
   assert.equal(menu._smash_ui_state(),1);capture(menu,'multiplayer-menu');
+  const initialMenu=Buffer.from(menu.HEAPU8.subarray(menu._smash_pixels(),menu._smash_pixels()+512*224*4));
+  press(menu,32);press(menu,32);capture(menu,'multiplayer-menu-selected');
+  assert.deepEqual(Buffer.from(menu.HEAPU8.subarray(menu._smash_pixels(),menu._smash_pixels()+512*127*4)),
+    initialMenu.subarray(0,512*127*4),'Selection preserves the original logo and stadium');
+  press(menu,16);press(menu,16);
+  assert.deepEqual(Buffer.from(menu.HEAPU8.subarray(menu._smash_pixels(),menu._smash_pixels()+512*224*4)),
+    initialMenu,'Title styling must not accumulate or alter its saved backdrop');
   press(menu,32);press(menu,32);press(menu,8);
   assert.equal(menu._smash_ui_state(),2);
   for(const ch of 'Player One') menu._smash_text_key(ch.charCodeAt(0));

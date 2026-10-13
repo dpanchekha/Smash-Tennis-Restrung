@@ -11,6 +11,7 @@
 #include "snes/snes.h"
 #include "snes/interp_bridge.h"
 #include "multiplayer.h"
+#include "rollback.h"
 
 static uint32_t pixels[512 * 240];
 static int16_t audio_samples[4096 * 2];
@@ -74,11 +75,16 @@ static void expand_low_resolution(const Ppu *ppu, unsigned line, void *context) 
     uint32_t *row = pixels + (line - 1) * 512;
     for (int x = 255; x >= 0; --x) row[x * 2] = row[x * 2 + 1] = row[x];
 }
-int smash_frame(uint32_t buttons) {
-    if (!mp_input(&buttons)) { mp_draw(pixels); return 2; }
-    PpuBeginDrawing(g_ppu, (uint8_t *)pixels, 512 * 4, kPpuRenderFlags_NewRenderer);
+int smash_run_guest(uint32_t buttons,int draw) {
+    PpuBeginDrawing(g_ppu, draw?(uint8_t *)pixels:NULL, 512 * 4, kPpuRenderFlags_NewRenderer);
     RtlRunFrame(buttons);
-    snes_beam_frame_driver_draw_ppu_frame_observed(expand_low_resolution, NULL);
+    snes_beam_frame_driver_draw_ppu_frame_observed(draw?expand_low_resolution:NULL, NULL);
+    return !g_watchdog_tripped;
+}
+int smash_frame(uint32_t buttons) {
+    if(smash_ui_state()==MP_PLAY && rb_active()) return rb_step();
+    if (!mp_input(&buttons)) { mp_draw(pixels); return 2; }
+    if(!smash_run_guest(buttons,1)) return 0;
     mp_after_frame();
     mp_draw(pixels);
     return !g_watchdog_tripped;

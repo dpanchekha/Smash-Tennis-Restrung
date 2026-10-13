@@ -5,7 +5,7 @@ const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const createSmash = require('../web/smash.js');
 (async () => {
-  const events = {}, masks = [], audioBuffers = [];
+  const events = {}, masks = [], audioBuffers = [], sources = [];
   let click, scheduled, painted = 0, removed = false, focused = false;
   const colors = [0, 0xff0000, 0x00ff00, 0x0000ff, 0x123456, 0xffffff, 0x876543];
   const start = {addEventListener: (name, fn) => {click = fn;}, remove: () => {removed = true;}};
@@ -28,7 +28,11 @@ const createSmash = require('../web/smash.js');
       audioBuffers.push(data);
       return {duration: samples / rate, getChannelData: channel => data[channel]};
     }
-    createBufferSource() {return {connect() {}, start(time) {assert.ok(time >= 0);}};}
+    createBufferSource() {
+      const source={connect() {},disconnect() {},stop() {this.stopped=true;},
+        start(time) {assert.ok(time>=0);this.time=time;}};
+      sources.push(source);return source;
+    }
   }
   const rom = fs.readFileSync('web/game.sfc');
   let pads=[];
@@ -71,6 +75,18 @@ const createSmash = require('../web/smash.js');
   scheduled(now+121);assert.equal(masks.at(-1),129|(64<<12),'Offline player two has an independent pad');
   pads=[];scheduled(now+141);assert.equal(masks.at(-1),0,'Disconnected pads do not leave stuck buttons');
   assert.ok(painted >= 4 && audioBuffers.length >= 4);
+  for(let i=1;i<sources.length;i++)
+    assert.ok(Math.abs(sources[i].time-sources[i-1].time-sources[i-1].buffer.duration)<1e-9,
+      'Audio chunks must remain contiguous');
+  const paintCount=painted;
+  scheduled(now+141);
+  assert.equal(painted,paintCount,'No redraw before the next game frame');
+  vm.runInContext('audio.currentTime=nextAudio-.010',scope);
+  scheduled(now+161);
+  assert.ok(Math.abs(sources.at(-1).time-sources.at(-2).time-sources.at(-2).buffer.duration)<1e-9,
+    'A late callback with 10ms still buffered must not insert an audio gap');
+  scope.document.hidden=true;scheduled(now+181);
+  assert.ok(sources.every(source=>source.stopped),'Hiding the page clears queued sound');
   assert.equal(error.hidden, true);
   console.log('Web host passed: ROM loading, Start, video, audio scheduling, keyboard and focus reset.');
 })().catch(error => {console.error(error); process.exitCode = 1;});

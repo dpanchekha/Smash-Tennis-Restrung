@@ -47,6 +47,7 @@
 #include "host_report.h"
 #include "cosim.h"
 static void rtl_reset_audio_delivery(void);
+static bool s_rollback_restore;
 #include "snes_runahead.h"
 #if defined(SNESRECOMP_NET)
 #include "snes_netplay.h"
@@ -1071,7 +1072,7 @@ bool RtlLoadSnapshotFromMemory(const void *data, size_t size) {
   if (hdr[1] >= 5 && g_rtl_game_info && g_rtl_game_info->state_load_extra &&
       memory.position < size && !memory.error)
     g_rtl_game_info->state_load_extra(&memory.base, hdr[1]);
-  if (!memory.error) rtl_reset_audio_delivery();
+  if (!memory.error && !s_rollback_restore) rtl_reset_audio_delivery();
   RtlApuUnlock();
   if (memory.error) return false;
   g_snes->beamMasterLast = g_cpu.master_cycles;
@@ -1439,7 +1440,9 @@ bool RtlRollbackLoadFromMemory(const void *data, size_t size) {
    * was on, and said so once per frame in the log. Netplay rollback had the
    * same shape waiting for it. Keep the counter across the load. */
   { const uint64_t generation = s_state_generation;
+    s_rollback_restore = true;
     ok = RtlLoadSnapshotFromMemory(data, guest);
+    s_rollback_restore = false;
     s_state_generation = generation; }
 
   /* The game's execution position goes back BEFORE the residue is applied and

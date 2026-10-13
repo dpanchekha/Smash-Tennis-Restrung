@@ -10,6 +10,27 @@ const {chromium}=require(process.env.SMASH_PLAYWRIGHT||'playwright-core');
   try {
     browser=await chromium.launch({headless:true,executablePath:process.env.SMASH_CHROMIUM,args:['--autoplay-policy=no-user-gesture-required']});
     const pages=await Promise.all([browser.newPage(),browser.newPage()]);
+    if(process.env.SMASH_TEST_JITTER) for(const page of pages) await page.addInitScript(()=>{
+      // Delay authoritative pairs in order, including one long burst. Real
+      // browser WebSockets, C simulation, keyboard input and audio still run.
+      const original=WebSocket.prototype.addEventListener;
+      WebSocket.prototype.addEventListener=function(type,listener,...args) {
+        if(type!=='message') return original.call(this,type,listener,...args);
+        let due=0,timer=null;const pending=[];
+        const drain=()=>{
+          timer=null;
+          while(pending.length && pending[0].due<=performance.now()) listener.call(this,pending.shift().event);
+          if(pending.length) timer=setTimeout(drain,Math.max(1,pending[0].due-performance.now()));
+        };
+        return original.call(this,type,event=>{
+          const m=JSON.parse(event.data);
+          if(m.type!=='frame') return listener.call(this,event);
+          due=Math.max(due,performance.now()+(m.frame===180?240:70));
+          pending.push({due,event});
+          if(timer===null) timer=setTimeout(drain,Math.max(1,due-performance.now()));
+        },...args);
+      };
+    });
     const errors=[];pages.forEach(p=>p.on('pageerror',e=>errors.push(e.message)));
     pages.forEach((p,i)=>{
       p.on('console',m=>{if(m.type()==='error') console.error('Browser',i,m.text());});
@@ -49,15 +70,21 @@ const {chromium}=require(process.env.SMASH_PLAYWRIGHT||'playwright-core');
     for(const page of pages) assert.equal(await page.evaluate(()=>engine===window.originalEngine),true,'Multiplayer must reuse the same game instance');
     for(const page of pages) await page.evaluate(()=>{
       window.hashes={};
-      const hash=engine._smash_state_hash;
-      engine._smash_state_hash=()=>{const h=hash();window.hashes[engine._smash_net_tick()]=h;return h;};
+      const hash=engine._smash_confirmed_hash;
+      engine._smash_confirmed_hash=frame=>{const h=hash(frame);window.hashes[frame]=h;return h;};
     });
     await pages[0].keyboard.down('KeyZ');await pages[1].keyboard.down('ArrowLeft');
-    await Promise.all(pages.map(page=>page.waitForFunction(()=>engine._smash_net_tick()>=240,null,{timeout:45000})));
+    await Promise.all(pages.map(page=>page.waitForFunction(()=>engine._smash_confirmed_tick()>=240||engine._smash_ui_state()===9,null,{timeout:60000})));
+    for(const page of pages) assert.equal(await page.evaluate(()=>engine._smash_ui_state()),8,'Rollback must stay synchronized');
     await pages[0].keyboard.up('KeyZ');await pages[1].keyboard.up('ArrowLeft');
     const hashes=await Promise.all(pages.map(page=>page.evaluate(()=>window.hashes)));
     const shared=Object.keys(hashes[0]).filter(k=>k in hashes[1]);
     assert.ok(shared.length>=1);for(const tick of shared) assert.equal(hashes[0][tick],hashes[1][tick]);
+    if(process.env.SMASH_TEST_JITTER) for(const page of pages) {
+      const stats=await page.evaluate(()=>({corrections:engine._smash_rollback_count(),replayed:engine._smash_replayed_frames(),stalls:engine._smash_rollback_stalls()}));
+      assert.ok(stats.corrections>0&&stats.replayed>0,'Delayed input must exercise actual rollback');
+      console.log('Browser rollback:',stats);
+    }
     await pages[0].screenshot({path:'build/multiplayer-browser-match.png'});
     await pages[1].close();await pages[0].waitForFunction(()=>engine._smash_ui_state()===9);
     await pages[0].keyboard.press('Enter',{delay:100});

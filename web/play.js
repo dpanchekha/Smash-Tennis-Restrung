@@ -10,6 +10,13 @@ const MP={OFF:0,MENU:1,NAME:2,CHARACTER:3,CODE:4,JOIN:5,LOADING:6,READY:7,PLAY:8
 let buttons=0,engine,rom,audio,nextAudio=0,deadline=0,running=false,sampleCarry=0;
 let socket=null,readySent=false,nextInput=0,connecting=false,buildId;
 let lastNetwork=0,lastState=MP.OFF;
+const INPUT_DELAY=2;
+let nextHash=120;
+const audioSources=new Set(), AUDIO_LEAD=.08;
+function resetAudio() {
+  for(const source of audioSources) {source.stop();source.disconnect();}
+  audioSources.clear();nextAudio=0;
+}
 addEventListener('keydown',event=>{
   const state=engine?._smash_ui_state();
   if((state===MP.NAME||state===MP.CODE)&&!event.ctrlKey&&!event.metaKey&&!event.altKey) {
@@ -56,7 +63,7 @@ function closeLobby() {
 }
 function networkError(code=-4) {
   closeLobby();
-  engine._smash_net_status(code);buttons=0;nextAudio=0;
+  engine._smash_net_status(code);buttons=0;resetAudio();
 }
 function send(message) {if(socket?.readyState===1) socket.send(JSON.stringify(message));}
 async function connectLobby() {
@@ -91,17 +98,25 @@ async function connectLobby() {
             for(let i=0;i<bytes.length;i++) engine.HEAPU8[ptr+i]=bytes.charCodeAt(i);
             if(!engine._smash_apply_menu(ptr,bytes.length)) throw Error('Could not synchronize the current menu');
           } finally {engine._free(ptr);}
-          sampleCarry=0;nextAudio=0;readySent=false;
+          sampleCarry=0;resetAudio();readySent=false;
           if(!engine._smash_prepare_match(m.characters[0],m.characters[1])) throw Error('Invalid match setup');
         }
         if(m.type==='start') {
-          if(!engine._smash_start_match()) throw Error('Match started before loading');
-          nextInput=0;deadline=performance.now();nextAudio=0;
+          if(m.delay!==INPUT_DELAY || m.rollback!==6 || !engine._smash_start_rollback(m.seat)) throw Error('Could not start rollback match');
+          nextInput=0;nextHash=120;deadline=performance.now();resetAudio();
+          // Both players start with the same two neutral delayed frames.
+          while(nextInput<INPUT_DELAY) submitInput(0);
         }
-        if(m.type==='frame'&&!engine._smash_receive_frame(m.frame,m.buttons)) throw Error('Invalid frame order');
+        if(m.type==='frame'&&!engine._smash_receive_frame(m.frame,m.buttons))
+          throw Error(`Invalid frame ${m.frame} (tick ${engine._smash_net_tick()}, submitted ${nextInput})`);
       } catch(error) {console.error(error);if(socket===ws) networkError(-3);}
     });
   } catch(error) {console.error(error);networkError(-1);}
+}
+function submitInput(buttons) {
+  const frame=nextInput;
+  if(!engine._smash_local_input(frame,buttons)) throw Error('Invalid local input order');
+  send({type:'input',frame,buttons});nextInput++;
 }
 function pumpNetwork() {
   const state=engine._smash_ui_state();
@@ -112,14 +127,16 @@ function pumpNetwork() {
   if(socket&&performance.now()-lastNetwork>20000) {networkError(-4);return;}
   if(state===MP.READY&&!readySent) {readySent=true;send({type:'ready',hash:engine._smash_state_hash()>>>0});}
   if(state===MP.PLAY) {
-    // Four-frame window; C advances only after the server pairs both inputs.
-    const limit=engine._smash_net_tick()+4;
-    while(nextInput<limit) send({type:'input',frame:nextInput++,buttons:controller()&0xfff});
+    // Only finalized history can be compared; predicted states may differ.
+    while(nextHash<=engine._smash_confirmed_tick()) {
+      send({type:'hash',frame:nextHash,hash:engine._smash_confirmed_hash(nextHash)>>>0});
+      nextHash+=120;
+    }
   }
   if(state!==lastState) {buttons=0;lastState=state;}
 }
 function fail(error) {
-  running=false;closeLobby();
+  running=false;closeLobby();resetAudio();
   document.querySelector('#error').hidden=false;
   document.querySelector('#error').textContent=String(error);console.error(error);
 }
@@ -134,7 +151,20 @@ function queueAudio() {
     for(let i=0;i<samples;i++) output[i]=pcm[i*2+channel]/32768;
   }
   const source=audio.createBufferSource();source.buffer=buffer;source.connect(audio.destination);
-  nextAudio=Math.max(nextAudio,audio.currentTime+.025);source.start(nextAudio);nextAudio+=buffer.duration;
+  // Once started, append exactly at the previous chunk's end. Moving every
+  // chunk forward to maintain a minimum lead inserts audible silence.
+  if(!nextAudio || nextAudio<audio.currentTime+.003) {
+    resetAudio();nextAudio=audio.currentTime+AUDIO_LEAD;
+    // Ease in after a real underrun rather than jumping to a nonzero sample.
+    const fade=Math.min(samples,Math.ceil(RATE*.003));
+    for(let channel=0;channel<2;channel++) {
+      const output=buffer.getChannelData(channel);
+      for(let i=0;i<fade;i++) output[i]*=i/fade;
+    }
+  }
+  audioSources.add(source);
+  source.onended=()=>{audioSources.delete(source);source.disconnect();};
+  source.start(nextAudio);nextAudio+=buffer.duration;
 }
 function paint() {
   const pixels=engine.HEAPU32.subarray(engine._smash_pixels()/4,engine._smash_pixels()/4+512*224);
@@ -148,21 +178,29 @@ function tick(now) {
   if(!running) return;
   try {
     pumpNetwork();
-    if(document.hidden) {deadline=now;nextAudio=0;requestAnimationFrame(tick);return;}
+    if(document.hidden) {deadline=now;resetAudio();requestAnimationFrame(tick);return;}
     if(now-deadline>100) deadline=now;
     let count=0;
     const loading=engine._smash_ui_state()===MP.LOADING;
-    while((loading||now>=deadline)&&count++<(loading?8:5)) {
+    const workStarted=performance.now();
+    while((loading||now>=deadline)&&count<(loading?8:5)) {
+      count++;
+      if(engine._smash_ui_state()===MP.PLAY) {
+        const limit=engine._smash_net_tick()+INPUT_DELAY;
+        if(nextInput<=limit) submitInput(controller()&0xfff);
+      }
       const result=engine._smash_frame(controller());
       if(!result) throw Error('The game stopped responding. Reload to restart.');
+      if(result===3) {count--;break;} // Replay is budgeted; no duplicate audio or image.
       if(result===1) {
         if(loading) engine._smash_audio(640);else queueAudio();
-        const frameNumber=engine._smash_net_tick();
-        if(engine._smash_ui_state()===MP.PLAY&&frameNumber%120===0)
-          send({type:'hash',frame:frameNumber,hash:engine._smash_state_hash()>>>0});
-      } else nextAudio=0;
+      } else if(engine._smash_ui_state()!==MP.PLAY) resetAudio();
       deadline+=1000/fps;
+      // A missing paired input is a temporary wait. Preserve buffered sound
+      // and avoid repeatedly asking C for the same unavailable frame.
+      if(result===2) {deadline=now+1000/fps;break;}
       if(loading&&engine._smash_ui_state()!==MP.LOADING) break;
+      if(performance.now()-workStarted>=12) break;
     }
     if(loading) deadline=now;
     if(count) paint();

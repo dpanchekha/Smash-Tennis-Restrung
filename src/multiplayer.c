@@ -3,6 +3,7 @@
  * WRAM $00=0/$02=$18/$04=$02 identifies the original active mode menu. The original
  * selection at $10/$52 is 0=exhibition, 1=tournament, 2=options. */
 #include "multiplayer.h"
+#include "rollback.h"
 #include "common_rtl.h"
 #include "snes_overlay_draw.h"
 #include <string.h>
@@ -30,6 +31,7 @@ static uint16_t word(int offset) { return g_ram[offset] | g_ram[offset+1] << 8; 
 static void put_word(int offset, int value) { g_ram[offset]=value; g_ram[offset+1]=value>>8; }
 static int mode_menu(void) { return word(0)==0 && word(2)==0x18 && word(4)==2; }
 void mp_init(void) {
+    rb_reset();
     state=MP_OFF; selection=character=keyboard=departing=age=0; previous=0;
     username[0]=code[0]=0; notice=""; tick=received=0;
     capture_backdrop=0;
@@ -61,7 +63,7 @@ int smash_ui_state(void) { return state; }
 const char *smash_username(void) { return username; }
 const char *smash_lobby_code(void) { return code; }
 int smash_character(void) { return character; }
-int smash_net_tick(void) { return tick; }
+int smash_net_tick(void) { return rb_active()?smash_rollback_tick():tick; }
 uint32_t smash_state_hash(void) {
     uint32_t hash=2166136261u;
     for (int i=0;i<0x20000;i++) hash=(hash^g_ram[i])*16777619u;
@@ -88,6 +90,7 @@ void smash_text_key(int key) {
     }
 }
 void smash_net_status(int status) {
+    if(status<0) rb_reset();
     if(status<0 && borrowed_menu) {
         if(!RtlLoadSnapshotFromMemory(menu_snapshot,menu_size)) {
             state=MP_ERROR; notice="COULD NOT RESTORE MENU - RELOAD"; return;
@@ -128,11 +131,14 @@ int smash_start_match(void) {
     state=MP_PLAY; previous=0; return 1;
 }
 int smash_receive_frame(int frame,uint32_t buttons) {
+    if(state==MP_PLAY && rb_active()) return rb_receive(frame,buttons);
     if(state!=MP_PLAY || frame!=received || received-tick>=128 || buttons>0xffffff) return 0;
     inputs[received++%128]=buttons; return 1;
 }
+void mp_end_match(void) { state=MP_ENDED;notice="EXHIBITION ENDED"; }
 int mp_input(uint32_t *buttons) {
     uint32_t edge=(*buttons & 0xfff)&~previous; previous=*buttons & 0xfff;
+    uint32_t menu_buttons=0;
     if(state==MP_LOADING) { *buttons=script[script_index].buttons; return 1; }
     if(state==MP_PLAY) {
         if(tick==received) return 0;
@@ -149,10 +155,14 @@ int mp_input(uint32_t *buttons) {
     }
     age++;
     if(state==MP_MENU) {
+        /* Let the original menu process each directional edge so its own
+         * sound driver plays the navigation effect. Our four-item selection
+         * remains independent of the original three-item cursor. */
+        menu_buttons=edge&(16|32);
         if(edge&16) selection=(selection+3)%4;
         if(edge&32) selection=(selection+1)%4;
         if(edge&(8|256|1)) {
-            if(selection==2) { state=MP_NAME; notice=""; }
+            if(selection==2) { state=MP_NAME; notice=""; menu_buttons=32; }
             else {
                 put_word(0x10,selection==3?2:selection); put_word(0x52,selection==3?2:selection);
                 state=MP_OFF; departing=1; *buttons=0; return 1;
@@ -175,6 +185,12 @@ int mp_input(uint32_t *buttons) {
         if(edge&(1|4)) state=MP_NAME;
     } else if(state==MP_JOIN || state==MP_ERROR) {
         if(edge&(1|4|8)) { state=MP_MENU; notice=""; }
+    }
+    /* Keep the native menu/audio clock alive beneath the overlay. In
+     * particular, don't cut a navigation sound off on the following frame.
+     * Never pass confirmation through to the original three-item menu. */
+    if(state>=MP_MENU && state<=MP_JOIN && mode_menu()) {
+        *buttons=menu_buttons; return 1;
     }
     return 0;
 }
@@ -214,6 +230,59 @@ static void text(int x,int y,const char *s,uint32_t color) {
             if(extra[index][row]&(1<<col)) box(x+col,y+row,1,1,color);
     }
 }
+/* Title-menu lettering follows the original 256-pixel artwork: tall serif
+ * initials with small lowercase letters. The framebuffer doubles X only.
+ * Keep this separate from the existing multiplayer screen font. */
+static void title_text(int x,int y,const char *s,uint32_t color) {
+    static const struct { char letter; int width; uint16_t rows[17]; } glyphs[]={
+        {'E',11,{0x7ff,0x606,0x406,0x406,0x86,0x86,0xc6,0xfe,0xc6,0x86,0x86,0x406,0x406,0x606,0x7ff}},
+        {'T',14,{0x1002,0x1ffe,0x30c3,0x20c1,0x20c1,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0xc0,0x1e0,0x3f0}},
+        {'M',15,{0x7007,0x3006,0x380e,0x380e,0x3416,0x3416,0x3226,0x3226,0x3146,0x3146,0x3086,0x3086,0x3006,0x3006,0x780f}},
+        {'O',13,{0x1f0,0x71c,0xc06,0xc06,0x1803,0x1803,0x1803,0x1803,0x1803,0x1803,0x1803,0xc06,0xc06,0x71c,0x1f0}},
+        {'x',5,{0,0,0,0,0,0,0,0,0x11,0xa,0xa,4,0xa,0xa,0x11}},
+        {'h',5,{0,1,1,1,1,1,1,1,0xd,0x13,0x11,0x11,0x11,0x11,0x11}},
+        {'i',1,{0,0,0,0,0,1,0,0,1,1,1,1,1,1,1}},
+        {'b',5,{0,1,1,1,1,1,1,1,0xd,0x13,0x11,0x11,0x11,0x13,0xd}},
+        {'t',4,{0,0,0,0,0,2,2,2,0xf,2,2,2,2,2,4}},
+        {'o',5,{0,0,0,0,0,0,0,0,0xe,0x11,0x11,0x11,0x11,0x11,0xe}},
+        {'n',5,{0,0,0,0,0,0,0,0,0xd,0x13,0x11,0x11,0x11,0x11,0x11}},
+        {'u',5,{0,0,0,0,0,0,0,0,0x11,0x11,0x11,0x11,0x11,0x19,0x16}},
+        {'r',4,{0,0,0,0,0,0,0,0,0xd,3,1,1,1,1,1}},
+        {'a',5,{0,0,0,0,0,0,0,0,0xe,0x10,0x10,0x1e,0x11,0x11,0x1e}},
+        {'m',7,{0,0,0,0,0,0,0,0,0x6d,0x5b,0x49,0x49,0x49,0x49,0x49}},
+        {'e',5,{0,0,0,0,0,0,0,0,0xe,0x11,0x11,0x1f,1,1,0xe}},
+        {'p',6,{0,0,0,0,0,0,0,0,0x1d,0x23,0x21,0x21,0x23,0x1d,1,1}},
+        {'l',2,{0,1,1,1,1,1,1,1,1,1,1,1,1,1,2}},
+        {'y',5,{0,0,0,0,0,0,0,0,0x11,0x11,0x11,0x12,0x12,0xc,4,2,1}}
+    };
+    for(;*s;s++) for(size_t i=0;i<sizeof(glyphs)/sizeof(glyphs[0]);i++) {
+        if(glyphs[i].letter!=*s) continue;
+        for(int row=0;row<17;row++) for(int col=0;col<glyphs[i].width;col++)
+            if(glyphs[i].rows[row]&(1u<<col)) box(x+col*2,y+row,2,1,color);
+        x+=(glyphs[i].width+2)*2;
+        break;
+    }
+}
+static void title_menu(void) {
+    /* Erase only the old pale lettering, retaining the original darkened
+     * court, stadium, panel borders, and logo. Never alter the saved backdrop:
+     * subsequent multiplayer screens still receive exactly the same image. */
+    for(int y=134;y<201;y++) for(int x=146;x<298;x++) {
+        uint32_t c=backdrop[y*512+x];
+        if(((c>>16)&255)>180 && ((c>>8)&255)>180 && (c&255)>180)
+            screen[y*512+x]=backdrop[y*512+320];
+    }
+    const char *items[]={"Exhibition","Tournament","Multiplayer","Option"};
+    int top=132+selection*17;
+    /* A restrained blue-green selection band within the original panel. */
+    for(int y=top;y<top+17;y++) for(int x=84;x<430;x++) {
+        uint32_t c=screen[y*512+x];
+        unsigned r=((c>>16)&255),g=((c>>8)&255),b=c&255;
+        screen[y*512+x]=((r*3+32)/4<<16)|((g*3+112)/4<<8)|((b*3+112)/4);
+    }
+    box(84,top,346,1,0x8c9452); box(84,top+16,346,1,0x8c9452);
+    for(int i=0;i<4;i++) title_text(148,133+i*17,items[i],i==selection?0xffffde:0xefefef);
+}
 void mp_draw(uint32_t *pixels) {
     screen=pixels;
     if(state==MP_OFF || state==MP_PLAY) return;
@@ -221,13 +290,7 @@ void mp_draw(uint32_t *pixels) {
     if(state!=MP_LOADING && state!=MP_READY) memcpy(pixels,backdrop,sizeof(backdrop));
     const uint32_t white=0xffffff, gold=0xffdf70, green=0x174038;
     if(state==MP_MENU) {
-        const char *items[]={"EXHIBITION","TOURNAMENT","MULTIPLAYER","OPTION"};
-        box(144,127,300,89,0x092b29);
-        for(int i=0;i<4;i++) {
-            if(i==selection) box(148,130+i*21,292,19,0x24746c);
-            text(160,136+i*21,i==selection?">":" ",gold);
-            text(184,136+i*21,items[i],white);
-        }
+        title_menu();
         return;
     }
     box(16,8,480,208,0x101e34); box(16,8,480,16,green);

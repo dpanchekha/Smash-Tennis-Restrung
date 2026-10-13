@@ -67,7 +67,8 @@ function createServer() {
       peer.ready=true;peer.hash=m.hash;room.activity=Date.now();
       if(room.players.every(p=>p.ready)) {
         if(room.players[0].hash!==room.players[1].hash) return reject(peer,-3);
-        room.phase='playing';broadcast(room,{type:'start'});
+        room.phase='playing';
+        room.players.forEach(p=>send(p,{type:'start',seat:p.seat,delay:2,rollback:6}));
       }
     } else if(m.type==='input') {
       if(room.phase!=='playing'||!Number.isInteger(m.frame)||m.frame!==peer.next||m.frame>room.tick+8||!Number.isInteger(m.buttons)||m.buttons<0||m.buttons>4095) return reject(peer,-1);

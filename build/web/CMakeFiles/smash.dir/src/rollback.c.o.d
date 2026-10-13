@@ -1,0 +1,33 @@
+CMakeFiles/smash.dir/src/rollback.c.o: \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/src/rollback.c \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/src/rollback.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/stdint.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/stdint.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/bits/alltypes.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/src/multiplayer.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/recompiled/snesrecomp/runner/src/common_rtl.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/stddef.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/stddef.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_header_macro.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_ptrdiff_t.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_size_t.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_wchar_t.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_null.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_max_align_t.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/__stddef_offsetof.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/recompiled/snesrecomp/runner/src/types.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/compat/stdlib.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/stdlib.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/features.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/alloca.h \
+  /home/dpanc/emsdk/upstream/lib/clang/24/include/stdbool.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/stdbool.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/assert.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/recompiled/snesrecomp/runner/src/snes/snes_regs.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/recompiled/snesrecomp/runner/src/debug_server.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/compat/string.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/string.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/strings.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/stdio.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/build/emcache/sysroot/include/wasi/api.h \
+  /home/dpanc/Documents/GitHub/Smash_Tennis/recompiled/snesrecomp/runner/src/spc_player.h

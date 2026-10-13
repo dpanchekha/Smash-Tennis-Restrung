@@ -838,6 +838,10 @@ void ppu_runLine(Ppu* ppu, int line) {
              sizeof(ppu->overlayBuffers[kPpuOverlaySource_Obj]));
     ppu->lineHasSprites = !PPU_forcedBlank(ppu) && ppu_evaluateSprites(ppu, line - 1);
 
+    /* Rollback replay still evaluates sprites (overflow flags) and the caller
+     * still walks raster writes and HDMA, but need not compose hidden pixels. */
+    if (!ppu->renderBuffer) return;
+
     if ((ppu->renderFlags & kPpuRenderFlags_NewRenderer) &&
         PPU_mode(ppu) != 4 && PPU_mode(ppu) != 5 && PPU_mode(ppu) != 6 &&
         !PPU_pseudoHires(ppu)) {

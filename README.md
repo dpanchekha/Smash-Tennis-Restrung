@@ -23,9 +23,21 @@ compare their state, then start together. No second instance or intro replay is
 needed. Original character/court setup still runs, so this is not an instant
 jump into a match. This removes 722 simulated setup frames from the previous path
 (the test pairing takes 1,816 instead of 2,538 frames; wall time varies by device).
-This is local gameplay, not video streaming. Numbered input
-pairs keep simulation in lockstep; either player's delay stalls both games.
-There is a four-frame input window, periodic state checks, and disconnections
+Gameplay runs locally. Online play uses rollback with two frames of local input
+delay (about 40 ms at this game's 50 Hz rate) and at most six unconfirmed frames
+(about 120 ms). Missing opponent inputs repeat the last known buttons. When the
+relay supplies the actual pair, C restores the earliest incorrect state and
+replays it, at most two frames per browser callback. Longer delays pause forward
+simulation until inputs catch up. Only confirmed states are compared every 120
+frames; speculative differences are expected.
+
+Replay keeps CPU, APU, sprite evaluation and HDMA running, but omits hidden pixel
+composition. It discards replay-generated PCM and preserves the live audio queue
+and resampler, so corrections do not play the same sound twice. A sound already
+heard from a wrong prediction cannot be taken back. The separate browser audio
+buffer remains 80 ms. Rollback can produce visible corrections and adds CPU work;
+WebSocket relay transport still has ordered-delivery delays, and this is not a
+guarantee of smooth play on every connection or device. Disconnections
 return you to an in-game error screen with a route back to your saved local menu,
 still inside the same instance. Online setup uses the host's current game state
 and the default court selection. Tournament and doubles are
@@ -99,15 +111,22 @@ Multiplayer checks:
 
 ```sh
 node tests/multiplayer_core.cjs
+node tests/rollback.cjs
 node tests/lobby_server.cjs
 node tests/web_host.cjs
 # Requires an installed playwright-core and Chromium:
 node tests/multiplayer_browser.cjs
+SMASH_TEST_JITTER=1 node tests/multiplayer_browser.cjs
 ```
 
 The core test uses two real WASM instances with different menu histories, verifies
 same-instance snapshot synchronization/restoration, the selected character
 records, load/input barriers, and compares WRAM through 360 gameplay frames.
+The rollback test compares both player seats against a lockstep oracle through
+360 frames, including inputs arriving mid-replay, ring reuse, delayed inputs,
+a long interruption, bounded stalls and final pixel equality. It reports local
+Node timing, not browser or device performance guarantees. The jitter browser
+variant delays authoritative inputs by 70 ms with a 240 ms burst.
 The server test checks capacity, shared codes, readiness, ordering, mismatches,
 disconnects, and partial WebSocket headers. The browser test drives two Chromium
 pages through the C menus and lobby into synchronized play. Set `SMASH_PLAYWRIGHT`

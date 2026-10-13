@@ -1,12 +1,48 @@
 # Smash Tennis
 
 Run `./run.sh`, open **http://localhost:8000/**, and click **Start game**.
-Enter starts the original game and confirms menus. Arrow keys move;
+The game's mode menu offers Exhibition, Tournament, Multiplayer, and Option.
+Multiplayer is implemented in `src/multiplayer.c`: it draws directly into the
+game framebuffer and handles menu selection, username/code entry, the actual
+20-character roster, and setup of an original 1P versus 2P exhibition match.
+There is no separate HTML launcher menu. Enter starts the original game and
+confirms menus. Arrow keys move;
 Z/X/A/S map to SNES B/A/Y/X, Q/W to L/R, right Shift to Select.
-A standard gamepad is also supported. The page has only the start button and game.
+A standard gamepad is also supported. Online, the first connected gamepad
+controls your assigned player. Offline, a second gamepad controls player two.
+For in-game text entry, type on the keyboard or choose letters with the D-pad
+and SNES A (keyboard X). Start/Enter accepts; B deletes; Select/Escape goes back.
+Lobby codes are case-insensitive, accept up to 48 printable ASCII characters,
+and trim leading/trailing spaces. Usernames accept up to 20 characters.
+
+Both players must open the same running server and enter the same code. Each
+lobby admits exactly two players. Each browser keeps its existing game instance.
+The host shares a one-time snapshot of its current native menu; both instances
+continue from that state into the same singles exhibition and chosen characters,
+compare their state, then start together. No second instance or intro replay is
+needed. Original character/court setup still runs, so this is not an instant
+jump into a match. This removes 722 simulated setup frames from the previous path
+(the test pairing takes 1,816 instead of 2,538 frames; wall time varies by device).
+This is local gameplay, not video streaming. Numbered input
+pairs keep simulation in lockstep; either player's delay stalls both games.
+There is a four-frame input window, periodic state checks, and disconnections
+return you to an in-game error screen with a route back to your saved local menu,
+still inside the same instance. Online setup uses the host's current game state
+and the default court selection. Tournament and doubles are
+not offered by online setup.
+
+Node.js 22+ runs the included lobby service. `./run.sh` listens on port 8000
+on all interfaces (`HOST=127.0.0.1 ./run.sh` restricts it to this computer).
+For internet play, host this service at a shared address; an HTTPS reverse
+proxy must forward `/ws` WebSocket upgrades. A public deployment has not been
+performed. Browsers require JavaScript for their WebSocket and Gamepad APIs;
+JavaScript transports events while the C code owns the game UI and match flow.
+Use HTTPS beyond localhost for browser controller access, and restart the Node
+service after rebuilding so its game-version identifier matches the new files.
 
 The prebuilt `web/` directory is a standalone static site, including the supplied
 ROM as `game.sfc`. Serve it over HTTP rather than opening index.html as a file.
+Offline play works with static hosting; online play requires the Node service.
 The input ROM is unchanged.
 
 Rebuild with `bash tools/build_web.sh`. It uses `$HOME/emsdk` (override with
@@ -40,7 +76,7 @@ binary, not browser audio devices or event delivery. The agent sandbox blocks
 listening sockets and Chromium launch, so a real browser session must be tested
 outside it.
 
-Verified final build: 3,134 frames through title, menus, match setup, movement,
+Before the multiplayer change: 3,134 frames through title, menus, match setup, movement,
 and serving, with stack checks and nonzero PCM audio. The optimized build ran
 this route in 40.11 seconds versus 45.81 seconds before optimization in Node
 (about 12% less runtime). All 14 captured frame hashes remained identical.
@@ -58,6 +94,26 @@ and focus-reset paths. Color cases include black, white, each primary, and mixed
 colors using the same clamped pixel array as a browser.
 It does not replace an actual browser test. Full matches and every court have
 not been exhaustively validated.
+
+Multiplayer checks:
+
+```sh
+node tests/multiplayer_core.cjs
+node tests/lobby_server.cjs
+node tests/web_host.cjs
+# Requires an installed playwright-core and Chromium:
+node tests/multiplayer_browser.cjs
+```
+
+The core test uses two real WASM instances with different menu histories, verifies
+same-instance snapshot synchronization/restoration, the selected character
+records, load/input barriers, and compares WRAM through 360 gameplay frames.
+The server test checks capacity, shared codes, readiness, ordering, mismatches,
+disconnects, and partial WebSocket headers. The browser test drives two Chromium
+pages through the C menus and lobby into synchronized play. Set `SMASH_PLAYWRIGHT`
+to an installed playwright-core module and `SMASH_CHROMIUM` to an existing browser
+executable if they are not available through the default paths. Controller
+mapping is tested with simulated Gamepad API data, not a physical controller.
 
 Runtime license and attribution are retained in `recompiled/snesrecomp/` and
 copied into `web/`. Hardware reference: [PPU registers](https://snes.nesdev.org/wiki/PPU_registers).

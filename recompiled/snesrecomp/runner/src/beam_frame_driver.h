@@ -28,5 +28,7 @@ void snes_beam_frame_driver_draw_ppu_frame_observed(
     SnesBeamRasterObserver *observer, void *context);
 /* Forget the booted machine: the next frame starts from the reset vector. */
 void snes_beam_frame_driver_reset(void);
+struct SaveLoadInfo;
+void snes_beam_frame_driver_saveload(struct SaveLoadInfo *sli);
 
 #endif /* SNESRECOMP_BEAM_FRAME_DRIVER_H */

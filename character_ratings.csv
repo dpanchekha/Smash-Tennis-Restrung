@@ -1,0 +1,21 @@
+character,rank,speed,serve,volley,forehand,backhand,smash,lob,diving,amplitude,left_handed,unique_move,source
+Mike,2,7,9,4,9,6.5,10,8,Yes,Wide,No,,user_supplied_chart
+Dan,4,6,5,6,6,4.5,6,8,Yes,Wide,No,,user_supplied_chart
+John,3,7.5,7,7,7.5,5.5,6,6,Yes,Wide,No,,user_supplied_chart
+Darren,1,7,10,10,7.5,3,5,4,Yes,Wide,No,"serve; volley",user_supplied_chart
+Matt,5,6,3,2,8.5,6,4,2,Yes,Wide,No,back-A,user_supplied_chart
+Mark,7,6,8,4,6,6,6,4,Yes,Wide,No,,user_supplied_chart
+Peter,9,5,6,6,6,5.5,7,6,Yes,Wide,Yes,B-serve,user_supplied_chart
+Paul,6,6.5,10,4,6.5,5.5,7,8,No,Hiro,Yes,,user_supplied_chart
+Ian,14,4.5,2,3,2.5,4.5,8,2,Yes,Wide,No,,user_supplied_chart
+Tony,11,5,7,6,6.5,5,5,4,Yes,Wide,Yes,,user_supplied_chart
+Brian,17,3.5,5,2,4,3,6,4,Yes,Narrow,No,,user_supplied_chart
+Steve,8,3.5,2,5,6.5,4,7,6,Yes,Narrow,Yes,,user_supplied_chart
+Helen,10,5,8,4,6,6.5,4,8,Yes,Hiro,Yes,,user_supplied_chart
+Susan,18,3.5,5,4,6,2.5,5,4,No,Wide,No,,user_supplied_chart
+Julie,19,3,5,2,4,3,9,8,No,Narrow,No,,user_supplied_chart
+Rose,16,4.5,5,8,3,4,5,6,No,Wide,Yes,,user_supplied_chart
+Carol,13,5.5,2,4,3,7,7,6,Yes,Wide,No,,user_supplied_chart
+Marina,12,4.5,5,4,5.5,4,8,8,Yes,Wide,No,,user_supplied_chart
+Kirsty,15,4.5,2,8,3.5,4.5,7,2,No,Wide,Yes,,user_supplied_chart
+Nina,20,1.5,1,2,2.5,2,5,4,No,Narrow,No,,user_supplied_chart

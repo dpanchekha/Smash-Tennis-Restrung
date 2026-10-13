@@ -10,6 +10,7 @@
 #include "snes/ppu.h"
 #include "snes/snes.h"
 #include "snes/interp_bridge.h"
+#include "multiplayer.h"
 
 static uint32_t pixels[512 * 240];
 static int16_t audio_samples[4096 * 2];
@@ -17,6 +18,19 @@ void smash_test_interpreter(int enabled) {
     interp_bridge_set_scheduler_aot_policy(enabled ? 0 : 1);
 }
 uint32_t smash_stack(void) { return g_cpu.S; }
+static void save_execution(struct SaveLoadInfo *sli) {
+    RtlSaveExecutionState(sli);
+    snes_beam_frame_driver_saveload(sli);
+}
+static void load_execution(struct SaveLoadInfo *sli, uint32_t version) {
+    (void)version;
+    if (!RtlLoadExecutionState(sli)) { RtlStateStreamFail(sli); return; }
+    snes_beam_frame_driver_saveload(sli);
+}
+static void apply_execution(uint32_t version) {
+    (void)version;
+    RtlApplyExecutionState();
+}
 void smash_diagnostics(void) {
     fprintf(stderr, "frame=%d pc=%06x S=%04x P=%02x mode=%d blank=%02x nmi=%d beam=%d:%d\n",
       snes_frame_counter, interp_bridge_lle_resume_pc(), g_cpu.S, g_cpu.P,
@@ -25,7 +39,9 @@ void smash_diagnostics(void) {
 static const RtlGameInfo game = {
     .title = "Smash Tennis", .run_frame = snes_beam_frame_driver_run_frame,
     .draw_ppu_frame = snes_beam_frame_driver_draw_ppu_frame,
-    .save_name_prefix = "smash", .session_reset = snes_beam_frame_driver_reset
+    .save_name_prefix = "smash", .session_reset = snes_beam_frame_driver_reset,
+    .state_save_extra = save_execution, .state_load_extra = load_execution,
+    .on_state_loaded = apply_execution
 };
 
 /* All guest execution and audio consumption occur on the browser main thread. */
@@ -47,6 +63,7 @@ int smash_init(const uint8_t *rom, int size, int audio_rate) {
     snes_beam_frame_driver_reset();
     RtlSetAudioOutputRate(audio_rate);
     RtlEnableExtendedFrameTiming();
+    mp_init();
     return 1;
 }
 uint32_t *smash_pixels(void) { return pixels; }
@@ -58,9 +75,12 @@ static void expand_low_resolution(const Ppu *ppu, unsigned line, void *context) 
     for (int x = 255; x >= 0; --x) row[x * 2] = row[x * 2 + 1] = row[x];
 }
 int smash_frame(uint32_t buttons) {
+    if (!mp_input(&buttons)) { mp_draw(pixels); return 2; }
     PpuBeginDrawing(g_ppu, (uint8_t *)pixels, 512 * 4, kPpuRenderFlags_NewRenderer);
     RtlRunFrame(buttons);
     snes_beam_frame_driver_draw_ppu_frame_observed(expand_low_resolution, NULL);
+    mp_after_frame();
+    mp_draw(pixels);
     return !g_watchdog_tripped;
 }
 void smash_audio(int frames) {

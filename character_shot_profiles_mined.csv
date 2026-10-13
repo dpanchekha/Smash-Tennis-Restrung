@@ -1,0 +1,381 @@
+character,record_index,profile,power_coefficient_u8,initial_vertical_coefficient_s8,initial_vertical_velocity_raw,initial_vertical_deceleration_u8,falling_vertical_deceleration_u8,profile_rom_offset,selector_record_offset,selector_value,raw_profile_hex,condition
+Mike,0,serve_A,95,-4,-64,41,41,0x00807A,,,5ffc2929,character record
+Mike,0,serve_B,61,1,16,12,24,0x00807E,,,3d010c18,character record
+Mike,0,forehand_A,73,33,528,33,50,0x008082,,,49212132,character record; shared profiles also exist
+Mike,0,forehand_B,57,33,528,30,24,0x008086,,,39211e18,character record; shared profiles also exist
+Mike,0,backhand_A,56,26,416,21,29,0x00808A,,,381a151d,character record; shared profiles also exist
+Mike,0,backhand_B,49,40,640,32,19,0x00808E,,,31282013,character record; shared profiles also exist
+Mike,0,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Mike,0,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Mike,0,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Mike,0,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Mike,0,lob_forehand,37,56,896,23,44,0x00866D,0x00002D,3,2538172c,shot ID 0x38; lob semantic inferred from input and arc
+Mike,0,lob_backhand,34,58,928,20,63,0x00867D,0x00002D,3,223a143f,shot ID 0x3A; lob semantic inferred from input and arc
+Mike,0,smash_A,121,-4,-64,54,54,0x00868D,0x00002E,3,79fc3636,outside alternate timing window
+Mike,0,smash_B,106,-1,-16,51,51,0x00869D,0x00002E,3,6aff3333,normal B profile
+Mike,0,smash_timed_A,175,-5,-80,75,75,0x0086AD,0x00002F,3,affb4b4b,unsigned(player[0x1088]-8) < 4
+Mike,0,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Mike,0,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Mike,0,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Mike,0,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Dan,1,serve_A,82,1,16,18,40,0x0080B1,,,52011228,character record
+Dan,1,serve_B,56,5,80,10,32,0x0080B5,,,38050a20,character record
+Dan,1,forehand_A,58,30,480,26,25,0x0080B9,,,3a1e1a19,character record; shared profiles also exist
+Dan,1,forehand_B,46,25,400,16,19,0x0080BD,,,2e191013,character record; shared profiles also exist
+Dan,1,backhand_A,52,28,448,20,25,0x0080C1,,,341c1419,character record; shared profiles also exist
+Dan,1,backhand_B,39,19,304,11,10,0x0080C5,,,27130b0a,character record; shared profiles also exist
+Dan,1,volley_A,77,1,16,2,52,0x008639,0x00002C,2,4d010234,both forehand and backhand
+Dan,1,volley_B,53,6,96,6,53,0x00864D,0x00002C,2,35060635,ball height >= 14
+Dan,1,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Dan,1,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Dan,1,lob_forehand,37,56,896,23,44,0x00866D,0x00002D,3,2538172c,shot ID 0x38; lob semantic inferred from input and arc
+Dan,1,lob_backhand,34,58,928,20,63,0x00867D,0x00002D,3,223a143f,shot ID 0x3A; lob semantic inferred from input and arc
+Dan,1,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+Dan,1,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+Dan,1,smash_timed_A,144,-5,-80,61,61,0x0086A5,0x00002F,1,90fb3d3d,unsigned(player[0x1088]-8) < 4
+Dan,1,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Dan,1,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Dan,1,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Dan,1,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+John,2,serve_A,86,-3,-48,40,40,0x0080E8,,,56fd2828,character record
+John,2,serve_B,55,7,112,11,39,0x0080EC,,,37070b27,character record
+John,2,forehand_A,65,33,528,31,34,0x0080F0,,,41211f22,character record; shared profiles also exist
+John,2,forehand_B,47,10,160,5,27,0x0080F4,,,2f0a051b,character record; shared profiles also exist
+John,2,backhand_A,48,39,624,26,26,0x0080F8,,,30271a1a,character record; shared profiles also exist
+John,2,backhand_B,42,14,224,7,19,0x0080FC,,,2a0e0713,character record; shared profiles also exist
+John,2,volley_A,77,1,16,2,52,0x008639,0x00002C,2,4d010234,both forehand and backhand
+John,2,volley_B,53,6,96,6,53,0x00864D,0x00002C,2,35060635,ball height >= 14
+John,2,volley_low_B_forehand,48,48,768,64,64,0x008615,0x00002B,1,30304040,ball height < 14
+John,2,volley_low_B_backhand,45,48,768,56,56,0x008625,0x00002B,1,2d303838,ball height < 14
+John,2,lob_forehand,34,52,832,18,52,0x008669,0x00002D,2,22341234,shot ID 0x38; lob semantic inferred from input and arc
+John,2,lob_backhand,26,59,944,17,32,0x008679,0x00002D,2,1a3b1120,shot ID 0x3A; lob semantic inferred from input and arc
+John,2,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+John,2,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+John,2,smash_timed_A,144,-5,-80,61,61,0x0086A5,0x00002F,1,90fb3d3d,unsigned(player[0x1088]-8) < 4
+John,2,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+John,2,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+John,2,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+John,2,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Darren,3,serve_A,110,-4,-64,41,41,0x00811F,,,6efc2929,character record
+Darren,3,serve_B,58,7,112,8,52,0x008123,,,3a070834,character record
+Darren,3,forehand_A,56,19,304,17,17,0x008127,,,38131111,character record; shared profiles also exist
+Darren,3,forehand_B,46,26,416,20,14,0x00812B,,,2e1a140e,character record; shared profiles also exist
+Darren,3,backhand_A,41,42,672,51,5,0x00812F,,,292a3305,character record; shared profiles also exist
+Darren,3,backhand_B,44,23,368,15,15,0x008133,,,2c170f0f,character record; shared profiles also exist
+Darren,3,volley_A,96,-2,-32,25,25,0x008641,0x00002C,4,60fe1919,both forehand and backhand
+Darren,3,volley_B,60,5,80,5,52,0x008655,0x00002C,4,3c050534,ball height >= 14
+Darren,3,volley_low_B_forehand,48,48,768,64,64,0x008615,0x00002B,1,30304040,ball height < 14
+Darren,3,volley_low_B_backhand,45,48,768,56,56,0x008625,0x00002B,1,2d303838,ball height < 14
+Darren,3,lob_forehand,30,49,784,14,63,0x008665,0x00002D,1,1e310e3f,shot ID 0x38; lob semantic inferred from input and arc
+Darren,3,lob_backhand,30,54,864,18,39,0x008675,0x00002D,1,1e361227,shot ID 0x3A; lob semantic inferred from input and arc
+Darren,3,smash_A,77,2,32,37,37,0x008681,0x00002E,0,4d022525,outside alternate timing window
+Darren,3,smash_B,77,2,32,38,38,0x008691,0x00002E,0,4d022626,normal B profile
+Darren,3,smash_timed_A,144,-5,-80,61,61,0x0086A5,0x00002F,1,90fb3d3d,unsigned(player[0x1088]-8) < 4
+Darren,3,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Darren,3,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Darren,3,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Darren,3,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Matt,4,serve_A,76,3,48,9,42,0x008156,,,4c03092a,character record
+Matt,4,serve_B,58,10,160,13,41,0x00815A,,,3a0a0d29,character record
+Matt,4,forehand_A,59,32,512,27,28,0x00815E,,,3b201b1c,character record; shared profiles also exist
+Matt,4,forehand_B,54,32,512,22,32,0x008162,,,36201620,character record; shared profiles also exist
+Matt,4,backhand_A,46,66,1056,35,62,0x008166,,,2e42233e,character record; shared profiles also exist
+Matt,4,backhand_B,53,33,528,25,25,0x00816A,,,35211919,character record; shared profiles also exist
+Matt,4,volley_A,67,16,256,22,32,0x008631,0x00002C,0,43101620,both forehand and backhand
+Matt,4,volley_B,43,28,448,22,30,0x008645,0x00002C,0,2b1c161e,ball height >= 14
+Matt,4,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Matt,4,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Matt,4,lob_forehand,30,57,912,20,31,0x008661,0x00002D,0,1e39141f,shot ID 0x38; lob semantic inferred from input and arc
+Matt,4,lob_backhand,26,52,832,13,51,0x008671,0x00002D,0,1a340d33,shot ID 0x3A; lob semantic inferred from input and arc
+Matt,4,smash_A,77,2,32,37,37,0x008681,0x00002E,0,4d022525,outside alternate timing window
+Matt,4,smash_B,77,2,32,38,38,0x008691,0x00002E,0,4d022626,normal B profile
+Matt,4,smash_timed_A,96,-5,-80,37,37,0x0086A1,0x00002F,0,60fb2525,unsigned(player[0x1088]-8) < 4
+Matt,4,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Matt,4,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Matt,4,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Matt,4,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Mark,5,serve_A,88,0,0,1,38,0x00818D,,,58000126,character record
+Mark,5,serve_B,67,2,32,4,44,0x008191,,,4302042c,character record
+Mark,5,forehand_A,52,30,480,22,24,0x008195,,,341e1618,character record; shared profiles also exist
+Mark,5,forehand_B,46,46,736,53,9,0x008199,,,2e2e3509,character record; shared profiles also exist
+Mark,5,backhand_A,52,37,592,27,28,0x00819D,,,34251b1c,character record; shared profiles also exist
+Mark,5,backhand_B,46,24,384,20,11,0x0081A1,,,2e18140b,character record; shared profiles also exist
+Mark,5,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Mark,5,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Mark,5,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Mark,5,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Mark,5,lob_forehand,30,49,784,14,63,0x008665,0x00002D,1,1e310e3f,shot ID 0x38; lob semantic inferred from input and arc
+Mark,5,lob_backhand,30,54,864,18,39,0x008675,0x00002D,1,1e361227,shot ID 0x3A; lob semantic inferred from input and arc
+Mark,5,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+Mark,5,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+Mark,5,smash_timed_A,96,-5,-80,37,37,0x0086A1,0x00002F,0,60fb2525,unsigned(player[0x1088]-8) < 4
+Mark,5,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Mark,5,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Mark,5,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Mark,5,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Peter,6,serve_A,84,-3,-48,32,32,0x0081C4,,,54fd2020,character record
+Peter,6,serve_B,70,72,1152,250,43,0x0081C8,,,4648fa2b,character record
+Peter,6,forehand_A,58,31,496,26,27,0x0081CC,,,3a1f1a1b,character record; shared profiles also exist
+Peter,6,forehand_B,42,44,704,40,10,0x0081D0,,,2a2c280a,character record; shared profiles also exist
+Peter,6,backhand_A,47,21,336,15,14,0x0081D4,,,2f150f0e,character record; shared profiles also exist
+Peter,6,backhand_B,41,25,400,24,6,0x0081D8,,,29191806,character record; shared profiles also exist
+Peter,6,volley_A,77,1,16,2,52,0x008639,0x00002C,2,4d010234,both forehand and backhand
+Peter,6,volley_B,53,6,96,6,53,0x00864D,0x00002C,2,35060635,ball height >= 14
+Peter,6,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Peter,6,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Peter,6,lob_forehand,34,52,832,18,52,0x008669,0x00002D,2,22341234,shot ID 0x38; lob semantic inferred from input and arc
+Peter,6,lob_backhand,26,59,944,17,32,0x008679,0x00002D,2,1a3b1120,shot ID 0x3A; lob semantic inferred from input and arc
+Peter,6,smash_A,114,-4,-64,43,43,0x008689,0x00002E,2,72fc2b2b,outside alternate timing window
+Peter,6,smash_B,96,-1,-16,43,43,0x008699,0x00002E,2,60ff2b2b,normal B profile
+Peter,6,smash_timed_A,144,-5,-80,61,61,0x0086A5,0x00002F,1,90fb3d3d,unsigned(player[0x1088]-8) < 4
+Peter,6,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Peter,6,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Peter,6,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Peter,6,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Paul,7,serve_A,118,-4,-64,47,47,0x0081FB,,,76fc2f2f,character record
+Paul,7,serve_B,70,72,1152,236,41,0x0081FF,,,4648ec29,character record
+Paul,7,forehand_A,56,31,496,23,32,0x008203,,,381f1720,character record; shared profiles also exist
+Paul,7,forehand_B,50,25,400,18,20,0x008207,,,32191214,character record; shared profiles also exist
+Paul,7,backhand_A,50,40,640,48,10,0x00820B,,,3228300a,character record; shared profiles also exist
+Paul,7,backhand_B,47,27,432,18,18,0x00820F,,,2f1b1212,character record; shared profiles also exist
+Paul,7,volley_A,77,1,16,2,52,0x008639,0x00002C,2,4d010234,both forehand and backhand
+Paul,7,volley_B,53,6,96,6,53,0x00864D,0x00002C,2,35060635,ball height >= 14
+Paul,7,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Paul,7,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Paul,7,lob_forehand,37,56,896,23,44,0x00866D,0x00002D,3,2538172c,shot ID 0x38; lob semantic inferred from input and arc
+Paul,7,lob_backhand,34,58,928,20,63,0x00867D,0x00002D,3,223a143f,shot ID 0x3A; lob semantic inferred from input and arc
+Paul,7,smash_A,77,2,32,37,37,0x008681,0x00002E,0,4d022525,outside alternate timing window
+Paul,7,smash_B,77,2,32,38,38,0x008691,0x00002E,0,4d022626,normal B profile
+Paul,7,smash_timed_A,175,-5,-80,75,75,0x0086AD,0x00002F,3,affb4b4b,unsigned(player[0x1088]-8) < 4
+Paul,7,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Paul,7,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Paul,7,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Paul,7,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Ian,8,serve_A,73,4,64,24,29,0x008232,,,4904181d,character record
+Ian,8,serve_B,65,76,1216,211,37,0x008236,,,414cd325,character record
+Ian,8,forehand_A,41,22,352,13,12,0x00823A,,,29160d0c,character record; shared profiles also exist
+Ian,8,forehand_B,38,30,480,15,19,0x00823E,,,261e0f13,character record; shared profiles also exist
+Ian,8,backhand_A,56,42,672,30,41,0x008242,,,382a1e29,character record; shared profiles also exist
+Ian,8,backhand_B,38,29,464,25,7,0x008246,,,261d1907,character record; shared profiles also exist
+Ian,8,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Ian,8,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Ian,8,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Ian,8,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Ian,8,lob_forehand,30,57,912,20,31,0x008661,0x00002D,0,1e39141f,shot ID 0x38; lob semantic inferred from input and arc
+Ian,8,lob_backhand,26,52,832,13,51,0x008671,0x00002D,0,1a340d33,shot ID 0x3A; lob semantic inferred from input and arc
+Ian,8,smash_A,114,-4,-64,43,43,0x008689,0x00002E,2,72fc2b2b,outside alternate timing window
+Ian,8,smash_B,96,-1,-16,43,43,0x008699,0x00002E,2,60ff2b2b,normal B profile
+Ian,8,smash_timed_A,175,-5,-80,75,75,0x0086AD,0x00002F,3,affb4b4b,unsigned(player[0x1088]-8) < 4
+Ian,8,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Ian,8,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Ian,8,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Ian,8,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Tony,9,serve_A,86,0,0,35,34,0x008269,,,56002322,character record
+Tony,9,serve_B,67,72,1152,225,29,0x00826D,,,4348e11d,character record
+Tony,9,forehand_A,54,26,416,20,23,0x008271,,,361a1417,character record; shared profiles also exist
+Tony,9,forehand_B,44,45,720,53,8,0x008275,,,2c2d3508,character record; shared profiles also exist
+Tony,9,backhand_A,44,48,768,51,9,0x008279,,,2c303309,character record; shared profiles also exist
+Tony,9,backhand_B,47,29,464,18,22,0x00827D,,,2f1d1216,character record; shared profiles also exist
+Tony,9,volley_A,77,1,16,2,52,0x008639,0x00002C,2,4d010234,both forehand and backhand
+Tony,9,volley_B,53,6,96,6,53,0x00864D,0x00002C,2,35060635,ball height >= 14
+Tony,9,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Tony,9,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Tony,9,lob_forehand,30,49,784,14,63,0x008665,0x00002D,1,1e310e3f,shot ID 0x38; lob semantic inferred from input and arc
+Tony,9,lob_backhand,30,54,864,18,39,0x008675,0x00002D,1,1e361227,shot ID 0x3A; lob semantic inferred from input and arc
+Tony,9,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+Tony,9,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+Tony,9,smash_timed_A,144,-5,-80,61,61,0x0086A5,0x00002F,1,90fb3d3d,unsigned(player[0x1088]-8) < 4
+Tony,9,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Tony,9,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Tony,9,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Tony,9,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Brian,10,serve_A,83,-2,-32,34,34,0x0082A0,,,53fe2222,character record
+Brian,10,serve_B,70,72,1152,242,43,0x0082A4,,,4648f22b,character record
+Brian,10,forehand_A,46,19,304,10,28,0x0082A8,,,2e130a1c,character record; shared profiles also exist
+Brian,10,forehand_B,42,24,384,15,14,0x0082AC,,,2a180f0e,character record; shared profiles also exist
+Brian,10,backhand_A,44,21,336,12,19,0x0082B0,,,2c150c13,character record; shared profiles also exist
+Brian,10,backhand_B,40,24,384,14,14,0x0082B4,,,28180e0e,character record; shared profiles also exist
+Brian,10,volley_A,67,16,256,22,32,0x008631,0x00002C,0,43101620,both forehand and backhand
+Brian,10,volley_B,43,28,448,22,30,0x008645,0x00002C,0,2b1c161e,ball height >= 14
+Brian,10,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Brian,10,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Brian,10,lob_forehand,30,49,784,14,63,0x008665,0x00002D,1,1e310e3f,shot ID 0x38; lob semantic inferred from input and arc
+Brian,10,lob_backhand,30,54,864,18,39,0x008675,0x00002D,1,1e361227,shot ID 0x3A; lob semantic inferred from input and arc
+Brian,10,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+Brian,10,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+Brian,10,smash_timed_A,152,-5,-80,65,65,0x0086A9,0x00002F,2,98fb4141,unsigned(player[0x1088]-8) < 4
+Brian,10,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Brian,10,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Brian,10,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Brian,10,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Steve,11,serve_A,73,69,1104,230,40,0x0082D7,,,4945e628,character record
+Steve,11,serve_B,62,11,176,30,36,0x0082DB,,,3e0b1e24,character record
+Steve,11,forehand_A,58,32,512,20,67,0x0082DF,,,3a201443,character record; shared profiles also exist
+Steve,11,forehand_B,43,20,320,9,31,0x0082E3,,,2b14091f,character record; shared profiles also exist
+Steve,11,backhand_A,46,38,608,17,80,0x0082E7,,,2e261150,character record; shared profiles also exist
+Steve,11,backhand_B,42,31,496,18,20,0x0082EB,,,2a1f1214,character record; shared profiles also exist
+Steve,11,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Steve,11,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Steve,11,volley_low_B_forehand,48,48,768,64,64,0x008615,0x00002B,1,30304040,ball height < 14
+Steve,11,volley_low_B_backhand,45,48,768,56,56,0x008625,0x00002B,1,2d303838,ball height < 14
+Steve,11,lob_forehand,34,52,832,18,52,0x008669,0x00002D,2,22341234,shot ID 0x38; lob semantic inferred from input and arc
+Steve,11,lob_backhand,26,59,944,17,32,0x008679,0x00002D,2,1a3b1120,shot ID 0x3A; lob semantic inferred from input and arc
+Steve,11,smash_A,114,-4,-64,43,43,0x008689,0x00002E,2,72fc2b2b,outside alternate timing window
+Steve,11,smash_B,96,-1,-16,43,43,0x008699,0x00002E,2,60ff2b2b,normal B profile
+Steve,11,smash_timed_A,152,-5,-80,65,65,0x0086A9,0x00002F,2,98fb4141,unsigned(player[0x1088]-8) < 4
+Steve,11,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Steve,11,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Steve,11,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Steve,11,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Helen,12,serve_A,90,-3,-48,36,36,0x00830E,,,5afd2424,character record
+Helen,12,serve_B,70,72,1152,225,38,0x008312,,,4648e126,character record
+Helen,12,forehand_A,53,25,400,19,21,0x008316,,,35191315,character record; shared profiles also exist
+Helen,12,forehand_B,47,43,688,38,13,0x00831A,,,2f2b260d,character record; shared profiles also exist
+Helen,12,backhand_A,59,26,416,17,48,0x00831E,,,3b1a1130,character record; shared profiles also exist
+Helen,12,backhand_B,47,32,512,20,24,0x008322,,,2f201418,character record; shared profiles also exist
+Helen,12,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Helen,12,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Helen,12,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Helen,12,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Helen,12,lob_forehand,37,56,896,23,44,0x00866D,0x00002D,3,2538172c,shot ID 0x38; lob semantic inferred from input and arc
+Helen,12,lob_backhand,34,58,928,20,63,0x00867D,0x00002D,3,223a143f,shot ID 0x3A; lob semantic inferred from input and arc
+Helen,12,smash_A,77,2,32,37,37,0x008681,0x00002E,0,4d022525,outside alternate timing window
+Helen,12,smash_B,77,2,32,38,38,0x008691,0x00002E,0,4d022626,normal B profile
+Helen,12,smash_timed_A,96,-5,-80,37,37,0x0086A1,0x00002F,0,60fb2525,unsigned(player[0x1088]-8) < 4
+Helen,12,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Helen,12,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Helen,12,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Helen,12,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Susan,13,serve_A,83,-3,-48,30,30,0x008345,,,53fd1e1e,character record
+Susan,13,serve_B,72,72,1152,242,43,0x008349,,,4848f22b,character record
+Susan,13,forehand_A,55,21,336,13,40,0x00834D,,,37150d28,character record; shared profiles also exist
+Susan,13,forehand_B,43,25,400,17,13,0x008351,,,2b19110d,character record; shared profiles also exist
+Susan,13,backhand_A,41,41,656,35,10,0x008355,,,2929230a,character record; shared profiles also exist
+Susan,13,backhand_B,37,9,144,3,34,0x008359,,,25090322,character record; shared profiles also exist
+Susan,13,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Susan,13,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Susan,13,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Susan,13,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Susan,13,lob_forehand,30,49,784,14,63,0x008665,0x00002D,1,1e310e3f,shot ID 0x38; lob semantic inferred from input and arc
+Susan,13,lob_backhand,30,54,864,18,39,0x008675,0x00002D,1,1e361227,shot ID 0x3A; lob semantic inferred from input and arc
+Susan,13,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+Susan,13,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+Susan,13,smash_timed_A,96,-5,-80,37,37,0x0086A1,0x00002F,0,60fb2525,unsigned(player[0x1088]-8) < 4
+Susan,13,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Susan,13,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Susan,13,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Susan,13,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Julie,14,serve_A,78,-3,-48,28,28,0x00837C,,,4efd1c1c,character record
+Julie,14,serve_B,67,72,1152,222,35,0x008380,,,4348de23,character record
+Julie,14,forehand_A,47,23,368,12,33,0x008384,,,2f170c21,character record; shared profiles also exist
+Julie,14,forehand_B,36,39,624,34,6,0x008388,,,24272206,character record; shared profiles also exist
+Julie,14,backhand_A,43,16,256,7,33,0x00838C,,,2b100721,character record; shared profiles also exist
+Julie,14,backhand_B,34,29,464,19,8,0x008390,,,221d1308,character record; shared profiles also exist
+Julie,14,volley_A,67,16,256,22,32,0x008631,0x00002C,0,43101620,both forehand and backhand
+Julie,14,volley_B,43,28,448,22,30,0x008645,0x00002C,0,2b1c161e,ball height >= 14
+Julie,14,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Julie,14,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Julie,14,lob_forehand,37,56,896,23,44,0x00866D,0x00002D,3,2538172c,shot ID 0x38; lob semantic inferred from input and arc
+Julie,14,lob_backhand,34,58,928,20,63,0x00867D,0x00002D,3,223a143f,shot ID 0x3A; lob semantic inferred from input and arc
+Julie,14,smash_A,121,-4,-64,54,54,0x00868D,0x00002E,3,79fc3636,outside alternate timing window
+Julie,14,smash_B,106,-1,-16,51,51,0x00869D,0x00002E,3,6aff3333,normal B profile
+Julie,14,smash_timed_A,152,-5,-80,65,65,0x0086A9,0x00002F,2,98fb4141,unsigned(player[0x1088]-8) < 4
+Julie,14,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Julie,14,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Julie,14,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Julie,14,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Rose,15,serve_A,83,56,896,244,44,0x0083B3,,,5338f42c,character record
+Rose,15,serve_B,65,56,896,252,28,0x0083B7,,,4138fc1c,character record
+Rose,15,forehand_A,48,21,336,15,16,0x0083BB,,,30150f10,character record; shared profiles also exist
+Rose,15,forehand_B,36,24,384,16,8,0x0083BF,,,24181008,character record; shared profiles also exist
+Rose,15,backhand_A,44,5,80,3,11,0x0083C3,,,2c05030b,character record; shared profiles also exist
+Rose,15,backhand_B,45,19,304,13,13,0x0083C7,,,2d130d0d,character record; shared profiles also exist
+Rose,15,volley_A,85,0,0,1,24,0x00863D,0x00002C,3,55000118,both forehand and backhand
+Rose,15,volley_B,58,6,96,6,52,0x008651,0x00002C,3,3a060634,ball height >= 14
+Rose,15,volley_low_B_forehand,48,48,768,64,64,0x008615,0x00002B,1,30304040,ball height < 14
+Rose,15,volley_low_B_backhand,45,48,768,56,56,0x008625,0x00002B,1,2d303838,ball height < 14
+Rose,15,lob_forehand,34,52,832,18,52,0x008669,0x00002D,2,22341234,shot ID 0x38; lob semantic inferred from input and arc
+Rose,15,lob_backhand,26,59,944,17,32,0x008679,0x00002D,2,1a3b1120,shot ID 0x3A; lob semantic inferred from input and arc
+Rose,15,smash_A,96,-4,-64,34,34,0x008685,0x00002E,1,60fc2222,outside alternate timing window
+Rose,15,smash_B,86,-1,-16,35,35,0x008695,0x00002E,1,56ff2323,normal B profile
+Rose,15,smash_timed_A,96,-5,-80,37,37,0x0086A1,0x00002F,0,60fb2525,unsigned(player[0x1088]-8) < 4
+Rose,15,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Rose,15,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Rose,15,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Rose,15,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Carol,16,serve_A,73,21,336,82,33,0x0083EA,,,49155221,character record
+Carol,16,serve_B,62,72,1152,192,25,0x0083EE,,,3e48c019,character record
+Carol,16,forehand_A,43,19,304,12,12,0x0083F2,,,2b130c0c,character record; shared profiles also exist
+Carol,16,forehand_B,38,41,656,35,8,0x0083F6,,,26292308,character record; shared profiles also exist
+Carol,16,backhand_A,61,16,256,11,39,0x0083FA,,,3d100b27,character record; shared profiles also exist
+Carol,16,backhand_B,49,20,320,15,15,0x0083FE,,,31140f0f,character record; shared profiles also exist
+Carol,16,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Carol,16,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Carol,16,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Carol,16,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Carol,16,lob_forehand,34,52,832,18,52,0x008669,0x00002D,2,22341234,shot ID 0x38; lob semantic inferred from input and arc
+Carol,16,lob_backhand,26,59,944,17,32,0x008679,0x00002D,2,1a3b1120,shot ID 0x3A; lob semantic inferred from input and arc
+Carol,16,smash_A,114,-4,-64,43,43,0x008689,0x00002E,2,72fc2b2b,outside alternate timing window
+Carol,16,smash_B,96,-1,-16,43,43,0x008699,0x00002E,2,60ff2b2b,normal B profile
+Carol,16,smash_timed_A,175,-5,-80,75,75,0x0086AD,0x00002F,3,affb4b4b,unsigned(player[0x1088]-8) < 4
+Carol,16,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Carol,16,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Carol,16,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Carol,16,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Marina,17,serve_A,77,-3,-48,28,28,0x008421,,,4dfd1c1c,character record
+Marina,17,serve_B,70,3,48,6,54,0x008425,,,46030636,character record
+Marina,17,forehand_A,49,23,368,17,17,0x008429,,,31171111,character record; shared profiles also exist
+Marina,17,forehand_B,48,9,144,4,49,0x00842D,,,30090431,character record; shared profiles also exist
+Marina,17,backhand_A,42,26,416,11,34,0x008431,,,2a1a0b22,character record; shared profiles also exist
+Marina,17,backhand_B,40,42,672,38,9,0x008435,,,282a2609,character record; shared profiles also exist
+Marina,17,volley_A,74,3,48,3,56,0x008635,0x00002C,1,4a030338,both forehand and backhand
+Marina,17,volley_B,50,6,96,5,21,0x008649,0x00002C,1,32060515,ball height >= 14
+Marina,17,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Marina,17,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Marina,17,lob_forehand,37,56,896,23,44,0x00866D,0x00002D,3,2538172c,shot ID 0x38; lob semantic inferred from input and arc
+Marina,17,lob_backhand,34,58,928,20,63,0x00867D,0x00002D,3,223a143f,shot ID 0x3A; lob semantic inferred from input and arc
+Marina,17,smash_A,114,-4,-64,43,43,0x008689,0x00002E,2,72fc2b2b,outside alternate timing window
+Marina,17,smash_B,96,-1,-16,43,43,0x008699,0x00002E,2,60ff2b2b,normal B profile
+Marina,17,smash_timed_A,152,-5,-80,65,65,0x0086A9,0x00002F,2,98fb4141,unsigned(player[0x1088]-8) < 4
+Marina,17,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Marina,17,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Marina,17,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Marina,17,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Kirsty,18,serve_A,72,0,0,2,27,0x008458,,,4800021b,character record
+Kirsty,18,serve_B,62,16,256,34,36,0x00845C,,,3e102224,character record
+Kirsty,18,forehand_A,46,23,368,15,18,0x008460,,,2e170f12,character record; shared profiles also exist
+Kirsty,18,forehand_B,40,13,208,5,35,0x008464,,,280d0523,character record; shared profiles also exist
+Kirsty,18,backhand_A,48,7,112,4,20,0x008468,,,30070414,character record; shared profiles also exist
+Kirsty,18,backhand_B,44,22,352,14,15,0x00846C,,,2c160e0f,character record; shared profiles also exist
+Kirsty,18,volley_A,85,0,0,1,24,0x00863D,0x00002C,3,55000118,both forehand and backhand
+Kirsty,18,volley_B,58,6,96,6,52,0x008651,0x00002C,3,3a060634,ball height >= 14
+Kirsty,18,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Kirsty,18,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Kirsty,18,lob_forehand,30,57,912,20,31,0x008661,0x00002D,0,1e39141f,shot ID 0x38; lob semantic inferred from input and arc
+Kirsty,18,lob_backhand,26,52,832,13,51,0x008671,0x00002D,0,1a340d33,shot ID 0x3A; lob semantic inferred from input and arc
+Kirsty,18,smash_A,114,-4,-64,43,43,0x008689,0x00002E,2,72fc2b2b,outside alternate timing window
+Kirsty,18,smash_B,96,-1,-16,43,43,0x008699,0x00002E,2,60ff2b2b,normal B profile
+Kirsty,18,smash_timed_A,175,-5,-80,75,75,0x0086AD,0x00002F,3,affb4b4b,unsigned(player[0x1088]-8) < 4
+Kirsty,18,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Kirsty,18,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Kirsty,18,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Kirsty,18,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E
+Nina,19,serve_A,70,5,80,29,30,0x00848F,,,46051d1e,character record
+Nina,19,serve_B,60,26,416,54,36,0x008493,,,3c1a3624,character record
+Nina,19,forehand_A,42,26,416,16,16,0x008497,,,2a1a1010,character record; shared profiles also exist
+Nina,19,forehand_B,37,14,224,5,35,0x00849B,,,250e0523,character record; shared profiles also exist
+Nina,19,backhand_A,36,7,112,3,11,0x00849F,,,2407030b,character record; shared profiles also exist
+Nina,19,backhand_B,42,19,304,12,13,0x0084A3,,,2a130c0d,character record; shared profiles also exist
+Nina,19,volley_A,67,16,256,22,32,0x008631,0x00002C,0,43101620,both forehand and backhand
+Nina,19,volley_B,43,28,448,22,30,0x008645,0x00002C,0,2b1c161e,ball height >= 14
+Nina,19,volley_low_B_forehand,45,31,496,21,43,0x008611,0x00002B,0,2d1f152b,ball height < 14
+Nina,19,volley_low_B_backhand,45,49,784,45,40,0x008621,0x00002B,0,2d312d28,ball height < 14
+Nina,19,lob_forehand,30,49,784,14,63,0x008665,0x00002D,1,1e310e3f,shot ID 0x38; lob semantic inferred from input and arc
+Nina,19,lob_backhand,30,54,864,18,39,0x008675,0x00002D,1,1e361227,shot ID 0x3A; lob semantic inferred from input and arc
+Nina,19,smash_A,77,2,32,37,37,0x008681,0x00002E,0,4d022525,outside alternate timing window
+Nina,19,smash_B,77,2,32,38,38,0x008691,0x00002E,0,4d022626,normal B profile
+Nina,19,smash_timed_A,144,-5,-80,61,61,0x0086A5,0x00002F,1,90fb3d3d,unsigned(player[0x1088]-8) < 4
+Nina,19,shared_forehand_A,61,38,608,52,20,0x008601,,,3d263414,shared shot ID 0x08
+Nina,19,shared_forehand_B,49,34,544,25,28,0x008605,,,3122191c,shared shot ID 0x0A
+Nina,19,shared_backhand_A,58,26,416,25,25,0x008609,,,3a1a1919,shared shot ID 0x0C
+Nina,19,shared_backhand_B,45,40,640,27,28,0x00860D,,,2d281b1c,shared shot ID 0x0E

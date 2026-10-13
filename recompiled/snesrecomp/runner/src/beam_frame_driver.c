@@ -21,6 +21,7 @@
 #include "snes/ppu.h"
 #include "snes/sa1.h"
 #include "snes/snes.h"
+#include "snes/saveload.h"
 #include "snes/superfx.h"
 
 extern CpuState g_cpu;
@@ -268,4 +269,8 @@ void snes_beam_frame_driver_draw_ppu_frame_observed(
 void snes_beam_frame_driver_reset(void) {
   s_resume_pc = 0;
   s_wai_halted = false;
+}
+void snes_beam_frame_driver_saveload(struct SaveLoadInfo *sli) {
+  sli->func(sli, &s_resume_pc, sizeof(s_resume_pc));
+  sli->func(sli, &s_wai_halted, sizeof(s_wai_halted));
 }

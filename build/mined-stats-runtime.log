@@ -1,0 +1,20 @@
+[snes_load] name=SMASH TENNIS          coproc=0 chips=0 maker=af -> cartType=1
+{
+  "players": [
+    {
+      "base": "1000",
+      "record": "806b",
+      "side": 0,
+      "xStep": 608,
+      "yStep": 224
+    },
+    {
+      "base": "1100",
+      "record": "806b",
+      "side": 1,
+      "xStep": 570,
+      "yStep": 210
+    }
+  ],
+  "status": "ROM-to-live movement and trait loads verified"
+}

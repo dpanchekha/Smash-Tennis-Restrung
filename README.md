@@ -64,6 +64,16 @@ copied into `web/`. Hardware reference: [PPU registers](https://snes.nesdev.org/
 
 ## Reconstruction details
 
+### Character data
+
+`character_stats_mined.csv` is the readable, ROM-mined character matrix.
+`character_shot_profiles_mined.csv` preserves full shot parameters and ROM
+locations; `character_stats_mined.md` explains the mappings, units, and limits.
+Verify them with `node tools/mine_character_stats.cjs --check`.
+`character_stats_original.csv` is the unchanged lossless record backup.
+Do not confuse these with `character_ratings.csv`, which only transcribes the
+user-provided image and is not mined data. No character modifications are applied.
+
 Status: SNESRecomp generated 504 ahead-of-time CPU-state variants across five
 ROM banks, with 23 interpreter-only variants. The C sources are in
 `recompiled/generated/`, alongside the full analysis manifest.

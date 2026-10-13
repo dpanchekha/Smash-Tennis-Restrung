@@ -1,0 +1,134 @@
+emcmake: cmake -S '/home/dpanc/Downloads/smash tennis' -B '/home/dpanc/Downloads/smash tennis/build/web' -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake -DCMAKE_CROSSCOMPILING_EMULATOR=/home/dpanc/emsdk/node/24.19.0_64bit/bin/node in directory /home/dpanc/Downloads/smash tennis
+CMake Warning at /home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake:26 (message):
+  This version of cmake (4.3.0) does not support emscripten shared libraries.
+  Use cmake < 4.2.0 or cmake > 4.3.3 if you need shared library support
+Call Stack (most recent call first):
+  build/web/CMakeFiles/4.3.0/CMakeSystem.cmake:6 (include)
+  CMakeLists.txt:2 (project)
+
+
+CMake Warning at /home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake:26 (message):
+  This version of cmake (4.3.0) does not support emscripten shared libraries.
+  Use cmake < 4.2.0 or cmake > 4.3.3 if you need shared library support
+Call Stack (most recent call first):
+  /usr/share/cmake/Modules/Platform/Emscripten.cmake:9 (include)
+  /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)
+  CMakeLists.txt:2 (project)
+
+
+-- SNES desktop frame composition: LLE
+-- Cx4: instruction-level HG51B S169 core (ares, ISC)
+-- snesrecomp: execution policy default = off (runtime override: SNESRECOMP_EXECUTION_MODE / SNESRECOMP_FORCE_FLOOR)
+-- SNES frame fingerprints: disabled (production)
+-- SNES PPU/DMA history: disabled (production)
+-- SNES dispatch history: disabled (production)
+-- SNES runtime diagnostics: func_snapshot=0; stack_balance=0; boot_watchdog=0; cpu_hw=0; spc=0
+-- SNES audio trace history: SMALL
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dpanc/Downloads/smash tennis/build/web
+[  1%] Building C object CMakeFiles/smash.dir/src/game_host.c.o
+[  2%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank80_v2.c.o
+[  3%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank00_v2.c.o
+[  5%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank81_v2.c.o
+[  6%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part00_v2.c.o
+[  7%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part01_v2.c.o
+[  9%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part04_v2.c.o
+[ 10%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part05_v2.c.o
+[ 11%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part06_v2.c.o
+[ 12%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part07_v2.c.o
+[ 14%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part08_v2.c.o
+[ 15%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part09_v2.c.o
+[ 16%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part0a_v2.c.o
+[ 18%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part0b_v2.c.o
+[ 19%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part0c_v2.c.o
+[ 20%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part0d_v2.c.o
+[ 22%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part0e_v2.c.o
+[ 23%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank82_part0f_v2.c.o
+[ 24%] Building C object CMakeFiles/smash.dir/recompiled/generated/bank83_v2.c.o
+[ 25%] Building C object CMakeFiles/smash.dir/recompiled/generated/dispatch_v2.c.o
+[ 27%] Building C object CMakeFiles/smash.dir/recompiled/generated/module_v2.c.o
+[ 28%] Building C object CMakeFiles/smash.dir/recompiled/generated/unresolved_stubs_v2.c.o
+[ 29%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/common_cpu_infra.c.o
+[ 31%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/common_rtl.c.o
+[ 32%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/widescreen.c.o
+[ 33%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/recomp_hw.c.o
+[ 35%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/framedump.c.o
+[ 36%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/state_dump.c.o
+[ 37%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/host_paths.c.o
+[ 38%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/host_args.c.o
+[ 40%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/rom_image_verify.c.o
+[ 41%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snapshot_guard.c.o
+[ 42%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/crc32.c.o
+[ 44%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/sha256.c.o
+[ 45%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes_runahead.c.o
+[ 46%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/netplay/snes_netplay.c.o
+[ 48%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/cpu_state.c.o
+[ 49%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/program_module.c.o
+[ 50%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/rom_patch.c.o
+[ 51%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/generic_frame_driver.c.o
+[ 53%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/beam_frame_driver.c.o
+[ 54%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/content_variant.c.o
+[ 55%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/cpu_trace.c.o
+[ 57%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/audio_trace.c.o
+[ 58%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/ppu_dma_trace.c.o
+[ 59%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/execution_mode.c.o
+[ 61%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/host_mesh_builder.c.o
+[ 63%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/host_mesh.c.o
+[ 63%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/mod_audio.c.o
+[ 64%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/guarded_patch.c.o
+[ 66%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/util.c.o
+[ 67%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/apu.c.o
+[ 68%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/cart.c.o
+[ 70%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/cpu.c.o
+[ 71%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/dma.c.o
+[ 72%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/dsp.c.o
+[ 74%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/dsp1.c.o
+[ 75%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/dsp1_hle.c.o
+[ 76%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/joypad.c.o
+[ 77%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/audio_shadow.c.o
+[ 79%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/dsp_shadow.c.o
+[ 80%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/msu1.c.o
+[ 81%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/color_lut.c.o
+[ 83%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/ppu.c.o
+[ 84%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/ppu_legacy.c.o
+[ 85%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/sa1.c.o
+[ 87%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/sdd1.c.o
+[ 88%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/ws_shadow.c.o
+[ 89%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/snes.c.o
+[ 90%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/snes_other.c.o
+[ 92%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/spc.c.o
+[ 93%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/superfx.c.o
+[ 94%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/interp816.c.o
+[ 96%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/tier2_capture.c.o
+[ 97%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/interp_bridge.c.o
+[ 98%] Building C object CMakeFiles/smash.dir/recompiled/snesrecomp/runner/src/snes/cx4.c.o
+[100%] Linking C executable "/home/dpanc/Downloads/smash tennis/web/smash.js"
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libGL-getprocaddr.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libGL-getprocaddr.a" for subsequent builds)
+system_libs:INFO: compiled 4 inputs in 0.35s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libal.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libal.a" for subsequent builds)
+system_libs:INFO: compiled 1 inputs in 0.22s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libhtml5.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libhtml5.a" for subsequent builds)
+system_libs:INFO: compiled 5 inputs in 0.35s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libstubs.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libstubs.a" for subsequent builds)
+system_libs:INFO: compiled 2 inputs in 0.27s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libnoexit.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libnoexit.a" for subsequent builds)
+system_libs:INFO: compiled 1 inputs in 0.20s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libc.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libc.a" for subsequent builds)
+system_libs:INFO: compiled 1074 inputs in 5.92s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libdlmalloc.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libdlmalloc.a" for subsequent builds)
+system_libs:INFO: compiled 2 inputs in 0.52s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libclang_rt.builtins.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libclang_rt.builtins.a" for subsequent builds)
+system_libs:INFO: compiled 184 inputs in 1.98s
+cache:INFO:  - ok
+cache:INFO: generating system library: sysroot/lib/wasm32-emscripten/lto/libsockets.a... (this will be cached in "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot/lib/wasm32-emscripten/lto/libsockets.a" for subsequent builds)
+system_libs:INFO: compiled 27 inputs in 1.03s
+cache:INFO:  - ok
+[100%] Built target smash

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smash Tennis</title>
+<style>
+html,body{margin:0;width:100%;height:100%;background:#000;color:#fff;font-family:system-ui}
+body{display:grid;place-items:center;overflow:hidden}
+canvas{width:min(100vw,133.333vh);height:min(75vw,100vh);image-rendering:pixelated;display:none;outline:none}
+button{font:600 20px system-ui;padding:16px 32px;cursor:pointer;border:1px solid #bbb;border-radius:4px;background:#eee;color:#111}
+#error{max-width:36em;padding:24px;white-space:pre-wrap}
+</style>
+<button id="start">Start game</button>
+<canvas id="screen" width="512" height="224" tabindex="0" aria-label="Smash Tennis. Arrow keys move; Z, X, A, S are the face buttons; Enter is Start."></canvas>
+<div id="error" hidden></div>
+<script src="smash.js"></script>
+<script src="play.js"></script>
+</html>

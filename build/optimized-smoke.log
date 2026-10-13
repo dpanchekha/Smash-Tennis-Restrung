@@ -1,0 +1,30 @@
+[snes_load] name=SMASH TENNIS          coproc=0 chips=0 maker=af -> cartType=1
+frame=600 pc=80881e S=1ffb P=03 mode=9 blank=0f nmi=1 beam=225:6
+wasm-title 600 22e847aa378b39435bc4a45d5eb2b207b8442d258dd304099cd4c7ad0d69456f audio peak 24576
+frame=662 pc=80881c S=1ffb P=03 mode=9 blank=0f nmi=1 beam=225:0
+wasm-menu 662 cf396c0576b9b54d7ea4a14f51226030b9a7e8758dbfd14ca577188d203b998c audio peak 24576
+frame=724 pc=80881c S=1ffb P=03 mode=9 blank=0f nmi=1 beam=225:6
+wasm-step0 724 2ae85071df6c24155ec0b991bcc1af48f740f31cf6afaa179017912ec2a1b709 audio peak 24576
+frame=786 pc=80881e S=1ffb P=03 mode=9 blank=8f nmi=1 beam=225:4
+wasm-step1 786 558cfcc292d52448be51fbc3d5207f0d9dbfebd4a41524b2b72d5c45a6c2d0d5 audio peak 24576
+frame=1088 pc=80881e S=1ffb P=03 mode=53 blank=0f nmi=1 beam=225:14
+wasm-step2 1088 97ac32cbaf75fb63f178fb9aa0c2ca53533a04230c145eca0d4a9e4499d39fc0 audio peak 24576
+frame=1270 pc=80881e S=1ffb P=03 mode=53 blank=0f nmi=1 beam=225:26
+wasm-step3 1270 43c624ba81bf4bc9b7a6b16d7947c36f3e7d6ea1ee961bd4b41ab88fa4e9aade audio peak 24576
+frame=1452 pc=80881c S=1ffb P=03 mode=53 blank=0f nmi=1 beam=225:4
+wasm-step4 1452 489da258b074c8135eb8a23c359e7558af8e42497e0116340fa5b4aa8fc89824 audio peak 24576
+frame=1634 pc=80881e S=1ffb P=03 mode=53 blank=0f nmi=1 beam=225:26
+wasm-step5 1634 085a675e31d4484990a2c3c78c4e2f1dbd6a06e23e88d04bbed9df92cf30bc14 audio peak 24576
+frame=2136 pc=80881c S=1ffb P=03 mode=53 blank=0f nmi=1 beam=225:4
+wasm-step6 2136 6cf7c33d6606a5a4dc8fed1bc8f76b833fbe1d5b85d423afc78245e73cbb5a27 audio peak 24576
+frame=2638 pc=80881e S=1ffb P=03 mode=41 blank=0f nmi=1 beam=225:8
+wasm-step7 2638 6604407d6f383d2a683846004f534114ad75ce72174ebb4065d705bfcf8d93a9 audio peak 24576
+frame=2880 pc=80881e S=1ffb P=03 mode=41 blank=0f nmi=1 beam=225:16
+wasm-step8 2880 f6fc71d09628c07a9ec79d1bda6d3f70dea27ca16679f7b69a546de74fb3387e audio peak 24576
+frame=2920 pc=80881e S=1ffb P=03 mode=41 blank=0f nmi=1 beam=225:0
+wasm-step9 2920 ca23b53477dcfea9a6f66eda660e3dee6fde9aee9373ac273871592df5882766 audio peak 24576
+frame=2952 pc=80881e S=1ffb P=03 mode=41 blank=0f nmi=1 beam=225:10
+wasm-step10 2952 1fa7708a486fab53271bbd9dcf3b6cd4be744cd8deb7b5500d0e08d7ba7843de audio peak 24576
+frame=3134 pc=80881c S=1ffb P=03 mode=41 blank=0f nmi=1 beam=225:0
+wasm-step11 3134 a8e343c4c8662fc715586d826f58ac1a66d2d23c22c003d7ee2a67f55b62428a audio peak 24576
+3134 frames in 40.11s; audio peak 24576

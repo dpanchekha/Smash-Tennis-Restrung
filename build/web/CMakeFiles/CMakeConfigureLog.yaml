@@ -1,0 +1,1500 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/uname"
+      - "/home/dpanc/emsdk/upstream/emscripten/uname"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/uname"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/uname"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/uname"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/uname"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/uname"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/uname"
+      - "/home/dpanc/.local/bin/uname"
+      - "/home/dpanc/bin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Emscripten - 1 - x86
+      The host system is: Linux - 7.2.8-200.fc44.x86_64 - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/gmake"
+      - "/home/dpanc/emsdk/upstream/emscripten/gmake"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/gmake"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/gmake"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/gmake"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/gmake"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/gmake"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/gmake"
+      - "/home/dpanc/.local/bin/gmake"
+      - "/home/dpanc/bin/gmake"
+      - "/usr/local/bin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-strip"
+      - "strip"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/llvm-strip"
+      - "/home/dpanc/emsdk/llvm-strip"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/llvm-strip"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/llvm-strip"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/llvm-strip"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-strip"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/llvm-strip"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-strip"
+      - "/home/dpanc/.local/bin/llvm-strip"
+      - "/home/dpanc/bin/llvm-strip"
+      - "/usr/local/bin/llvm-strip"
+      - "/usr/bin/llvm-strip"
+      - "/usr/local/sbin/llvm-strip"
+      - "/usr/sbin/llvm-strip"
+      - "/bin/llvm-strip"
+      - "/sbin/llvm-strip"
+      - "/home/dpanc/emsdk/upstream/emscripten/strip"
+      - "/home/dpanc/emsdk/strip"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/strip"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/strip"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/strip"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/strip"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/strip"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/strip"
+      - "/home/dpanc/.local/bin/strip"
+      - "/home/dpanc/bin/strip"
+      - "/usr/local/bin/strip"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld.lld"
+      - "ld"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/ld.lld"
+      - "/home/dpanc/emsdk/ld.lld"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/ld.lld"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/ld.lld"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/ld.lld"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/ld.lld"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/ld.lld"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/ld.lld"
+      - "/home/dpanc/.local/bin/ld.lld"
+      - "/home/dpanc/bin/ld.lld"
+      - "/usr/local/bin/ld.lld"
+      - "/usr/bin/ld.lld"
+      - "/usr/local/sbin/ld.lld"
+      - "/usr/sbin/ld.lld"
+      - "/bin/ld.lld"
+      - "/sbin/ld.lld"
+      - "/home/dpanc/emsdk/upstream/emscripten/ld"
+      - "/home/dpanc/emsdk/ld"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/ld"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/ld"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/ld"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/ld"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/ld"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/ld"
+      - "/home/dpanc/.local/bin/ld"
+      - "/home/dpanc/bin/ld"
+      - "/usr/local/bin/ld"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/llvm-objdump"
+      - "/home/dpanc/emsdk/llvm-objdump"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/llvm-objdump"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/llvm-objdump"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/llvm-objdump"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-objdump"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/llvm-objdump"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-objdump"
+      - "/home/dpanc/.local/bin/llvm-objdump"
+      - "/home/dpanc/bin/llvm-objdump"
+      - "/usr/local/bin/llvm-objdump"
+      - "/usr/bin/llvm-objdump"
+      - "/usr/local/sbin/llvm-objdump"
+      - "/usr/sbin/llvm-objdump"
+      - "/bin/llvm-objdump"
+      - "/sbin/llvm-objdump"
+      - "/home/dpanc/emsdk/upstream/emscripten/objdump"
+      - "/home/dpanc/emsdk/objdump"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/objdump"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/objdump"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/objdump"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/objdump"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/objdump"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/objdump"
+      - "/home/dpanc/.local/bin/objdump"
+      - "/home/dpanc/bin/objdump"
+      - "/usr/local/bin/objdump"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/llvm-objcopy"
+      - "/home/dpanc/emsdk/llvm-objcopy"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/llvm-objcopy"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/llvm-objcopy"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/llvm-objcopy"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-objcopy"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/llvm-objcopy"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-objcopy"
+      - "/home/dpanc/.local/bin/llvm-objcopy"
+      - "/home/dpanc/bin/llvm-objcopy"
+      - "/usr/local/bin/llvm-objcopy"
+      - "/usr/bin/llvm-objcopy"
+      - "/usr/local/sbin/llvm-objcopy"
+      - "/usr/sbin/llvm-objcopy"
+      - "/bin/llvm-objcopy"
+      - "/sbin/llvm-objcopy"
+      - "/home/dpanc/emsdk/upstream/emscripten/objcopy"
+      - "/home/dpanc/emsdk/objcopy"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/objcopy"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/objcopy"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/objcopy"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/objcopy"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/objcopy"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/objcopy"
+      - "/home/dpanc/.local/bin/objcopy"
+      - "/home/dpanc/bin/objcopy"
+      - "/usr/local/bin/objcopy"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/llvm-readelf"
+      - "/home/dpanc/emsdk/llvm-readelf"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/llvm-readelf"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/llvm-readelf"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/llvm-readelf"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-readelf"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/llvm-readelf"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-readelf"
+      - "/home/dpanc/.local/bin/llvm-readelf"
+      - "/home/dpanc/bin/llvm-readelf"
+      - "/usr/local/bin/llvm-readelf"
+      - "/usr/bin/llvm-readelf"
+      - "/usr/local/sbin/llvm-readelf"
+      - "/usr/sbin/llvm-readelf"
+      - "/bin/llvm-readelf"
+      - "/sbin/llvm-readelf"
+      - "/home/dpanc/emsdk/upstream/emscripten/readelf"
+      - "/home/dpanc/emsdk/readelf"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/readelf"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/readelf"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/readelf"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/readelf"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/readelf"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/readelf"
+      - "/home/dpanc/.local/bin/readelf"
+      - "/home/dpanc/bin/readelf"
+      - "/usr/local/bin/readelf"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/llvm-dlltool"
+      - "/home/dpanc/emsdk/llvm-dlltool"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/llvm-dlltool"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/llvm-dlltool"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/llvm-dlltool"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-dlltool"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/llvm-dlltool"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-dlltool"
+      - "/home/dpanc/.local/bin/llvm-dlltool"
+      - "/home/dpanc/bin/llvm-dlltool"
+      - "/usr/local/bin/llvm-dlltool"
+      - "/usr/bin/llvm-dlltool"
+      - "/usr/local/sbin/llvm-dlltool"
+      - "/usr/sbin/llvm-dlltool"
+      - "/bin/llvm-dlltool"
+      - "/sbin/llvm-dlltool"
+      - "/home/dpanc/emsdk/upstream/emscripten/dlltool"
+      - "/home/dpanc/emsdk/dlltool"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/dlltool"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/dlltool"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/dlltool"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/dlltool"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/dlltool"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/dlltool"
+      - "/home/dpanc/.local/bin/dlltool"
+      - "/home/dpanc/bin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/sbin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/llvm-addr2line"
+      - "/home/dpanc/emsdk/llvm-addr2line"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/llvm-addr2line"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/llvm-addr2line"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/llvm-addr2line"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-addr2line"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/llvm-addr2line"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/llvm-addr2line"
+      - "/home/dpanc/.local/bin/llvm-addr2line"
+      - "/home/dpanc/bin/llvm-addr2line"
+      - "/usr/local/bin/llvm-addr2line"
+      - "/usr/bin/llvm-addr2line"
+      - "/usr/local/sbin/llvm-addr2line"
+      - "/usr/sbin/llvm-addr2line"
+      - "/bin/llvm-addr2line"
+      - "/sbin/llvm-addr2line"
+      - "/home/dpanc/emsdk/upstream/emscripten/addr2line"
+      - "/home/dpanc/emsdk/addr2line"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/addr2line"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/addr2line"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/addr2line"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/addr2line"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/addr2line"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/addr2line"
+      - "/home/dpanc/.local/bin/addr2line"
+      - "/home/dpanc/bin/addr2line"
+      - "/usr/local/bin/addr2line"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/tapi"
+      - "/home/dpanc/emsdk/tapi"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/tapi"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/tapi"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/tapi"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/tapi"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/tapi"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/tapi"
+      - "/home/dpanc/.local/bin/tapi"
+      - "/home/dpanc/bin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/sbin/tapi"
+      - "/bin/tapi"
+      - "/sbin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-24.0"
+      - "clang-scan-deps-24"
+      - "clang-scan-deps24"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/"
+      - "/home/dpanc/emsdk/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/dpanc/.local/bin/"
+      - "/home/dpanc/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/bin/"
+      - "/sbin/"
+    searched_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/clang-scan-deps-24.0"
+      - "/home/dpanc/emsdk/clang-scan-deps-24.0"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/clang-scan-deps-24.0"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/clang-scan-deps-24.0"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/clang-scan-deps-24.0"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps-24.0"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/clang-scan-deps-24.0"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps-24.0"
+      - "/home/dpanc/.local/bin/clang-scan-deps-24.0"
+      - "/home/dpanc/bin/clang-scan-deps-24.0"
+      - "/usr/local/bin/clang-scan-deps-24.0"
+      - "/usr/bin/clang-scan-deps-24.0"
+      - "/usr/local/sbin/clang-scan-deps-24.0"
+      - "/usr/sbin/clang-scan-deps-24.0"
+      - "/bin/clang-scan-deps-24.0"
+      - "/sbin/clang-scan-deps-24.0"
+      - "/home/dpanc/emsdk/upstream/emscripten/clang-scan-deps-24"
+      - "/home/dpanc/emsdk/clang-scan-deps-24"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/clang-scan-deps-24"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/clang-scan-deps-24"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/clang-scan-deps-24"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps-24"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/clang-scan-deps-24"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps-24"
+      - "/home/dpanc/.local/bin/clang-scan-deps-24"
+      - "/home/dpanc/bin/clang-scan-deps-24"
+      - "/usr/local/bin/clang-scan-deps-24"
+      - "/usr/bin/clang-scan-deps-24"
+      - "/usr/local/sbin/clang-scan-deps-24"
+      - "/usr/sbin/clang-scan-deps-24"
+      - "/bin/clang-scan-deps-24"
+      - "/sbin/clang-scan-deps-24"
+      - "/home/dpanc/emsdk/upstream/emscripten/clang-scan-deps24"
+      - "/home/dpanc/emsdk/clang-scan-deps24"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/clang-scan-deps24"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/clang-scan-deps24"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/clang-scan-deps24"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps24"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/clang-scan-deps24"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps24"
+      - "/home/dpanc/.local/bin/clang-scan-deps24"
+      - "/home/dpanc/bin/clang-scan-deps24"
+      - "/usr/local/bin/clang-scan-deps24"
+      - "/usr/bin/clang-scan-deps24"
+      - "/usr/local/sbin/clang-scan-deps24"
+      - "/usr/sbin/clang-scan-deps24"
+      - "/bin/clang-scan-deps24"
+      - "/sbin/clang-scan-deps24"
+      - "/home/dpanc/emsdk/upstream/emscripten/clang-scan-deps"
+      - "/home/dpanc/emsdk/clang-scan-deps"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path/clang-scan-deps"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s/clang-scan-deps"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO/clang-scan-deps"
+      - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps"
+      - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy/clang-scan-deps"
+      - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path/clang-scan-deps"
+      - "/home/dpanc/.local/bin/clang-scan-deps"
+      - "/home/dpanc/bin/clang-scan-deps"
+      - "/usr/local/bin/clang-scan-deps"
+      - "/usr/bin/clang-scan-deps"
+      - "/usr/local/sbin/clang-scan-deps"
+      - "/usr/sbin/clang-scan-deps"
+      - "/bin/clang-scan-deps"
+      - "/sbin/clang-scan-deps"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot;/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/dpanc/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/dpanc/emsdk"
+        - "/home/dpanc/emsdk/upstream/emscripten"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0UUUf4s"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0dPlYaO"
+        - "/home/dpanc/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.codex/tmp/arg0/codex-arg0kKLDKy"
+        - "/home/dpanc/.codex/packages/standalone/releases/0.162.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/dpanc/.local/bin"
+        - "/home/dpanc/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+      CMAKE_INSTALL_PREFIX: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/dpanc/Downloads/smash tennis/build/emcache/sysroot"
+...

@@ -1,0 +1,5 @@
+name=Smash Tennis
+rom_file=Smash Tennis (axekin.com).sfc
+rom_sha256=09fdef0c959e7275563f65d8267d95a20104f054e9438e9ac739ef7f46120a2d
+normalized_size=1048576
+mapping=lorom

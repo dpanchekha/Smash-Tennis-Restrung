@@ -1,0 +1,3 @@
+/home/dpanc/Downloads/smash tennis/build/recompiled/CMakeFiles/snesrecomp_game.dir
+/home/dpanc/Downloads/smash tennis/build/recompiled/CMakeFiles/edit_cache.dir
+/home/dpanc/Downloads/smash tennis/build/recompiled/CMakeFiles/rebuild_cache.dir
